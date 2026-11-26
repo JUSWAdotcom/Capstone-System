@@ -1,0 +1,21 @@
+# Apache settings (XAMPP and most web hosts read this file)
+Options -Indexes
+# do not let anyone download notes, backups or settings files
+<FilesMatch "\.(txt|md|sql|json|bak|log)$">
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order allow,deny
+Deny from all
+</IfModule>
+</FilesMatch>
+<FilesMatch "^(schema|security)\.php$">
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order allow,deny
+Deny from all
+</IfModule>
+</FilesMatch>

@@ -1,0 +1,149 @@
+HOW TO MAKE CodeSmartAi-X PUBLIC SO STUDENTS CAN USE IT  (version 30)
+=====================================================================
+
+Read this whole page once before you start. It is written in plain steps.
+Things I could NOT test from here (your host, your tunnel, a real Apache server) are marked [NOT TESTED].
+
+
+STEP 1. CHOOSE HOW STUDENTS WILL REACH THE SYSTEM
+--------------------------------------------------
+  A. SCHOOL NETWORK (LAN)        - the system runs on one computer (XAMPP). Students on the same Wi-Fi / lab open it by IP.
+                                   Easiest, free, everything works (including PHP, C++ and C# challenges). Only works inside the school.
+  B. TEMPORARY PUBLIC LINK       - XAMPP on your computer + a free "tunnel" (Cloudflare Tunnel or ngrok) that gives a public https link.
+                                   Good for a demo or one class day. Your computer must stay ON. [NOT TESTED with these services]
+  C. WEB HOSTING                 - upload the folder to a host that has PHP + MySQL. The link works 24 hours, from anywhere.
+                                   Best for "public". Needs the setup in step 4. [NOT TESTED on any real host]
+  D. VPS (your own server)       - for IT students who know Linux. Same as C but you install Apache, PHP, MariaDB and https yourself.
+
+  Important difference: on a PUBLIC site the server must not run students' PHP, C++ or C# programs (a student could run
+  anything on your server). So when PUBLIC_SITE is true, Run for PHP / C++ / C# says it is turned off. Python, JavaScript and
+  HTML/CSS still run inside the student's browser, and the lessons, quizzes, exams (Python/JS/HTML), grades and AI help all work.
+  If your class needs the PHP / C++ / C# challenges to run, use A (school network).
+
+
+STEP 2. THE SETTINGS TO CHANGE IN config.php  (top of the file, in the box "SETTINGS YOU MAY CHANGE")
+------------------------------------------------------------------------------------------------------
+  PUBLIC_SITE = true     turn ON for method B, C and D. It hides error details, sends http:// to https://, turns off running
+                         PHP/C++/C# on the server, and the site refuses to open if the next three items are unsafe.
+  TEACHER_CODE           CHANGE IT. The default Wcc-teacher1 is written in README.txt, so anyone could sign up as a teacher.
+                         (With PUBLIC_SITE=true the site will not open until you change it.)
+  DB_USER / DB_PASS      use a NEW database user with a strong password that can only use this one database. Not "root", not empty.
+                         (With PUBLIC_SITE=true the site will not open with root or an empty password.)
+                         Do not put a ' (single quote) in the password.
+  STUDENT_CODE           OPTIONAL but recommended: a class code students must type when they sign up. Give it to your students in
+                         class. It keeps strangers from making accounts. Leave '' if you want anyone to sign up.
+  APPROVE_NEW_ACCOUNTS   true (default) = new accounts wait until a teacher (students) or the admin (students and teachers)
+                         approves them on the Approvals page. This keeps outsiders out without any list from the school.
+  ALLOWED_EMAIL_DOMAINS  OPTIONAL: e.g. 'worldciti.edu.ph' if every student has a school email. Leave '' to allow any email.
+  AI_KEY                 your Anthropic key if you want Claude. In console.anthropic.com set a monthly SPEND LIMIT, because on a
+                         public site anyone with an account can ask questions (each student is limited to AI_DAILY_LIMIT per day).
+  MAIL_HOST, MAIL_PORT,  FILL THEM IN. New accounts must type a code that is EMAILED to them before they can log in, and so does
+  MAIL_SECURE, MAIL_USER, "Forgot password". Version 45: without email the code is NOT shown (nobody can sign up), so anybody could not skip the
+  MAIL_PASS              check: with PUBLIC_SITE=true the site will not open until MAIL_HOST is filled in here (after that the admin
+                         can also use Admin > Email; what is saved there wins). See README > EMAIL VERIFICATION
+                         (Gmail with an App password works). Send yourself a test sign up before you give the link to students.
+  ADMIN_START_PASSWORD   CHANGE IT. It is the first password of the admin account (ID admin) and it is written in README.txt.
+                         (With PUBLIC_SITE=true the site will not open while it is the default. The admin must also choose a new password at
+                         the first log in.)
+  INSTALL_KEY            only for web hosting (step 4). Leave '' on your own computer.
+
+
+STEP 3A. SCHOOL NETWORK (LAN)  - about 10 minutes
+-------------------------------------------------
+  1. Set a password for MySQL root (XAMPP > Shell > mysqladmin -u root password NEWPASSWORD) and put it in DB_PASS in config.php.
+     Do not open port 3306 in the firewall. Only Apache (port 80) is for students.
+  2. On the computer that runs XAMPP open Command Prompt and type  ipconfig . Find "IPv4 Address", for example 192.168.1.20 .
+  3. Windows Defender Firewall: allow Apache HTTP Server on Private networks.
+  4. Students open  http://192.168.1.20/capstone-system/  (use your own IP and folder name).
+  5. Keep that computer on, on the same network, and give it a fixed IP in the router if you can.
+  Notes: this is http (not https) so passwords are not encrypted on the school Wi-Fi. That is normal for a classroom LAN, but do not
+  tell students to reuse a password they use anywhere else.
+
+
+STEP 3B. TEMPORARY PUBLIC LINK WITH A TUNNEL  [NOT TESTED]
+----------------------------------------------------------
+  Cloudflare Tunnel (free): install "cloudflared" from developers.cloudflare.com, then run
+      cloudflared tunnel --url http://localhost:80
+  It prints a link like https://something.trycloudflare.com . Give that link + /capstone-system/ to students.
+  ngrok (free account): ngrok http 80  gives a https link in the same way.
+  Set PUBLIC_SITE = true (and the other settings in step 2). The link changes every time you restart the tunnel.
+  If the page keeps reloading in a loop, set FORCE_HTTPS = false in config.php (the tunnel already gives https).
+  Anyone on the internet who has the link can reach your computer's web server, so keep everything else in step 2 done.
+
+
+STEP 4. WEB HOSTING (method C)  [NOT TESTED on a real host]
+-----------------------------------------------------------
+  What the host must have: PHP 8.0 or newer with PDO MySQL, curl, mbstring and openssl; MySQL 5.7+ or MariaDB 10.3+; https (free
+  certificate). Most paid shared hosts have all of these. Free hosts often block calling other websites
+  (so Claude may not work there): ask the host before you choose.
+  1. In the host control panel make a MySQL database and a MySQL user with a strong password, and give the user all rights on that
+     database. Write down the 4 values: host name (often localhost, but some hosts give a special name), database name, user, password.
+  2. Edit config.php on your computer: DB_HOST, DB_NAME, DB_USER, DB_PASS, PUBLIC_SITE = true, TEACHER_CODE, INSTALL_KEY = 'a-long-random-text'
+     (and STUDENT_CODE and AI_KEY if you want them).
+  3. Upload the whole folder (File Manager or FTP) into public_html (or a sub-folder). Keep the hidden .htaccess files.
+  4. Open  https://your-domain/Setup/install.php?key=a-long-random-text  . It creates the tables and fills the lessons and challenges.
+     If it stops with a "max_allowed_packet" or time-out message, open it again, it continues where it stopped.
+     If the host does not let it make the database, make the database in the control panel first (step 1), it will use that one.
+  5. DELETE Setup/install.php from the host, then set INSTALL_KEY back to ''.
+  6. Open https://your-domain/ and sign up a teacher account with your TEACHER_CODE (the verification email must arrive: look in Spam too).
+     Then test as a student in another browser. Log in as admin (ID admin) and choose your own admin password.
+
+
+WHAT WAS DONE FOR ACCOUNT SECURITY  (good to say in your capstone defense)
+---------------------------------------------------------------------------
+  - Passwords are stored as bcrypt hashes (password_hash), never as text. Minimum 8, maximum 72 characters, very easy ones refused.
+  - Every database query uses prepared statements (no SQL injection). Every form has a CSRF token. Output is escaped (no XSS).
+  - Login lock: 5 wrong passwords lock that account for 15 minutes (and 50 wrong tries from one computer lock that computer).
+    A locked student can still use "Forgot password?" and the code unlocks the account.
+  - The session cookie is HttpOnly, SameSite=Lax and (on https) Secure. The session id is renewed at login. Strict session mode is on.
+  - Log out is a button (POST), so another website cannot log a student out with a link. It is inside Settings.
+  - Change password needs the OLD password (5 wrong tries lock that form for 15 minutes).
+  - New accounts must verify the email: a 6-digit code is emailed (30 minutes, 5 wrong tries, 3 codes per account and 10 per computer
+    in 15 minutes) and the account cannot log in before the code is typed. A never-verified account does not block its Student ID/email.
+  - Forgot the old password: the student types their Student ID and the email of the account. Only when the two belong to the
+    same account a 6-digit code (15 minutes, 5 tries) is EMAILED to that account (it is not shown on the page when MAIL_HOST is set)
+    and then the system asks for the new password. Version 45: the code is never shown on the page (only SHOW_CODES_ON_SCREEN=true does that, for testing).
+  - One admin account (ID admin): forced to choose its own password at the first log in, cannot be created by sign up, cannot use
+    Forgot password, cannot be changed or deleted from the admin pages. Students and teachers cannot open any Admin/ page.
+    Wrong pairs are counted: 5 wrong tries lock that Student ID for 15 minutes, 30 from one computer lock that computer.
+  - The Student ID and email are shown as ***** on the dashboard until the student presses the eye icon (they are the key for
+    "Forgot password"). They hide again after 15 seconds. This protects against someone looking at the screen or a screenshot.
+  - After a password change every OTHER device that was logged in is logged out.
+  - Teacher code and class code guesses are limited (5 wrong tries per 15 minutes per computer).
+  - On a public site: https is forced, HSTS is sent, error details are hidden, running PHP/C++/C# on the server is off,
+    Setup/install.php is locked behind INSTALL_KEY, and the site refuses to open with the default teacher code or a root/empty database password.
+  - .htaccess files stop people from downloading the .sql files, .json data, .txt notes, database/schema.php and Logging/security.php, and turn off folder listing.
+    [NOT TESTED on a real Apache server; XAMPP and most hosts use Apache. If your host uses Nginx ask them to block those files.]
+  - Headers: X-Frame-Options (no clickjacking), X-Content-Type-Options, Referrer-Policy.
+
+WHAT IS NOT COVERED  (be honest about these in the defense)
+------------------------------------------------------------
+  - No CAPTCHA and no 2-step login. The email check proves that the person can read that mailbox, not that the person is the real
+    student of that Student ID (STUDENT_CODE keeps strangers from signing up at all).
+  - The email sending was tested against a FAKE mail server (plain, STARTTLS, SSL), never against real Gmail or a real host [NOT TESTED
+    with a real mail service]. Test it yourself once. New Gmail accounts can land in Spam, and Gmail limits emails per day (about 500).
+  - Keep SHOW_CODES_ON_SCREEN=false on a real website. If it is true, the codes are shown on the page and the Student ID + email pair is
+    the only check for Forgot password: anyone who knows BOTH of a student's details could reset that password.
+  - (Accounts made before Student IDs existed cannot use the reset.)
+  - The admin sees every Student ID and email and can give any student or teacher a temporary password. Keep the admin password private.
+    Lost admin password: delete the admin row in phpMyAdmin and open any page, the admin is made again (README > ADMIN).
+  - The 5-tries lock means someone who knows a Student ID can lock that student for 15 minutes. The student can still use Forgot password.
+  - Students behind one school Wi-Fi may share one public IP address; the 50-tries-per-computer limit is high on purpose for that reason.
+  - Exams: a web page cannot truly block Alt+Tab or another device. The system blocks what the browser allows (Alt, Windows key,
+    copy/paste, right-click, leaving full screen) and RECORDS and counts the rest (3 times = submitted). Supervise important exams.
+  - Year levels (1st to 4th year) are chosen by the student when signing up, the system cannot check them. A student who
+    picks the wrong year would see that year's quizzes and exams. The teacher sees the Year column in Grades and can correct it.
+  - Moving students to the next year level is done by a teacher with the button "Start a new school year" (Grades dashboard).
+    The system does not know the calendar and never changes a year level by itself. Make a backup (Export) before you press it.
+  - Nothing here replaces backups. In phpMyAdmin use Export on capstone_db every week and keep the file somewhere safe.
+
+
+FINAL CHECKLIST BEFORE YOU GIVE THE LINK TO STUDENTS
+-----------------------------------------------------
+  [ ] PUBLIC_SITE = true            [ ] TEACHER_CODE changed          [ ] DB user is not root and has a password
+  [ ] APPROVE_NEW_ACCOUNTS = true   [ ] STUDENT_CODE set (optional)   [ ] Forgot password works (Student ID + email, the code arrives by email)
+  [ ] MAIL_ settings filled in and a test sign up got its verification email    [ ] ADMIN_START_PASSWORD changed and the admin chose a new password
+  [ ] Setup/install.php deleted           [ ] https works (padlock in the address bar)
+  [ ] You can sign up as a student, take a quiz, change the password, log out, log in again
+  [ ] A spend limit is set in console.anthropic.com (if you use AI_KEY)
+  [ ] You made a backup (phpMyAdmin > Export)

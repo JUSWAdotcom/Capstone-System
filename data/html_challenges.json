@@ -1,0 +1,1402 @@
+[
+{
+"level": "Easy",
+"title": "Close the heading #1",
+"code": "<h1>moon</h2>",
+"hint": "Match the opening and closing tag.",
+"expected": "HTML:{\"has\": [\"<h1>moon</h1>\"], \"not\": [\"<h1>moon</h2>\"]}"
+},
+{
+"level": "Easy",
+"title": "Close the heading #2",
+"code": "<h1>sun</h2>",
+"hint": "Match the opening and closing tag.",
+"expected": "HTML:{\"has\": [\"<h1>sun</h1>\"], \"not\": [\"<h1>sun</h2>\"]}"
+},
+{
+"level": "Easy",
+"title": "Close the heading #3",
+"code": "<h1>road</h2>",
+"hint": "Match the opening and closing tag.",
+"expected": "HTML:{\"has\": [\"<h1>road</h1>\"], \"not\": [\"<h1>road</h2>\"]}"
+},
+{
+"level": "Easy",
+"title": "Close the heading #4",
+"code": "<h1>lake</h2>",
+"hint": "Match the opening and closing tag.",
+"expected": "HTML:{\"has\": [\"<h1>lake</h1>\"], \"not\": [\"<h1>lake</h2>\"]}"
+},
+{
+"level": "Easy",
+"title": "Close the heading #5",
+"code": "<h1>tree</h2>",
+"hint": "Match the opening and closing tag.",
+"expected": "HTML:{\"has\": [\"<h1>tree</h1>\"], \"not\": [\"<h1>tree</h2>\"]}"
+},
+{
+"level": "Easy",
+"title": "Image alt text #1",
+"code": "<img src=\"moon.png\" >",
+"hint": "Every image needs alt text.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"moon.png\\\" alt=\\\"moon\\\">\"], \"not\": [\"<img src=\\\"moon.png\\\" >\"]}"
+},
+{
+"level": "Easy",
+"title": "Image alt text #2",
+"code": "<img src=\"star.png\" >",
+"hint": "Every image needs alt text.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"star.png\\\" alt=\\\"star\\\">\"], \"not\": [\"<img src=\\\"star.png\\\" >\"]}"
+},
+{
+"level": "Easy",
+"title": "Image alt text #3",
+"code": "<img src=\"road.png\" >",
+"hint": "Every image needs alt text.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"road.png\\\" alt=\\\"road\\\">\"], \"not\": [\"<img src=\\\"road.png\\\" >\"]}"
+},
+{
+"level": "Easy",
+"title": "Image alt text #4",
+"code": "<img src=\"fish.png\" >",
+"hint": "Every image needs alt text.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"fish.png\\\" alt=\\\"fish\\\">\"], \"not\": [\"<img src=\\\"fish.png\\\" >\"]}"
+},
+{
+"level": "Easy",
+"title": "Image alt text #5",
+"code": "<img src=\"sun.png\" >",
+"hint": "Every image needs alt text.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"sun.png\\\" alt=\\\"sun\\\">\"], \"not\": [\"<img src=\\\"sun.png\\\" >\"]}"
+},
+{
+"level": "Easy",
+"title": "Link attribute #1",
+"code": "<a src=\"https://example.com\">tree</a>",
+"hint": "A link uses href.",
+"expected": "HTML:{\"has\": [\"<a href=\\\"https://example.com\\\">tree</a>\"], \"not\": [\"<a src=\\\"https://example.com\\\">tree</a>\"]}"
+},
+{
+"level": "Easy",
+"title": "Link attribute #2",
+"code": "<a src=\"https://example.com\">bird</a>",
+"hint": "A link uses href.",
+"expected": "HTML:{\"has\": [\"<a href=\\\"https://example.com\\\">bird</a>\"], \"not\": [\"<a src=\\\"https://example.com\\\">bird</a>\"]}"
+},
+{
+"level": "Easy",
+"title": "Link attribute #3",
+"code": "<a src=\"https://example.com\">home</a>",
+"hint": "A link uses href.",
+"expected": "HTML:{\"has\": [\"<a href=\\\"https://example.com\\\">home</a>\"], \"not\": [\"<a src=\\\"https://example.com\\\">home</a>\"]}"
+},
+{
+"level": "Easy",
+"title": "Link attribute #4",
+"code": "<a src=\"https://example.com\">sun</a>",
+"hint": "A link uses href.",
+"expected": "HTML:{\"has\": [\"<a href=\\\"https://example.com\\\">sun</a>\"], \"not\": [\"<a src=\\\"https://example.com\\\">sun</a>\"]}"
+},
+{
+"level": "Easy",
+"title": "Link attribute #5",
+"code": "<a src=\"https://example.com\">cat</a>",
+"hint": "A link uses href.",
+"expected": "HTML:{\"has\": [\"<a href=\\\"https://example.com\\\">cat</a>\"], \"not\": [\"<a src=\\\"https://example.com\\\">cat</a>\"]}"
+},
+{
+"level": "Easy",
+"title": "Paragraph tag #1",
+"code": "<para>moon</p>",
+"hint": "The paragraph tag is p.",
+"expected": "HTML:{\"has\": [\"<p>moon</p>\"], \"not\": [\"<para>moon</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Paragraph tag #2",
+"code": "<para>road</p>",
+"hint": "The paragraph tag is p.",
+"expected": "HTML:{\"has\": [\"<p>road</p>\"], \"not\": [\"<para>road</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Paragraph tag #3",
+"code": "<para>star</p>",
+"hint": "The paragraph tag is p.",
+"expected": "HTML:{\"has\": [\"<p>star</p>\"], \"not\": [\"<para>star</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Paragraph tag #4",
+"code": "<para>lake</p>",
+"hint": "The paragraph tag is p.",
+"expected": "HTML:{\"has\": [\"<p>lake</p>\"], \"not\": [\"<para>lake</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Paragraph tag #5",
+"code": "<para>home</p>",
+"hint": "The paragraph tag is p.",
+"expected": "HTML:{\"has\": [\"<p>home</p>\"], \"not\": [\"<para>home</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Strong text #1",
+"code": "<bold>tree</strong>",
+"hint": "Bold text uses strong.",
+"expected": "HTML:{\"has\": [\"<strong>tree</strong>\"], \"not\": [\"<bold>tree</strong>\"]}"
+},
+{
+"level": "Easy",
+"title": "Strong text #2",
+"code": "<bold>bird</strong>",
+"hint": "Bold text uses strong.",
+"expected": "HTML:{\"has\": [\"<strong>bird</strong>\"], \"not\": [\"<bold>bird</strong>\"]}"
+},
+{
+"level": "Easy",
+"title": "Strong text #3",
+"code": "<bold>book</strong>",
+"hint": "Bold text uses strong.",
+"expected": "HTML:{\"has\": [\"<strong>book</strong>\"], \"not\": [\"<bold>book</strong>\"]}"
+},
+{
+"level": "Easy",
+"title": "Strong text #4",
+"code": "<bold>sun</strong>",
+"hint": "Bold text uses strong.",
+"expected": "HTML:{\"has\": [\"<strong>sun</strong>\"], \"not\": [\"<bold>sun</strong>\"]}"
+},
+{
+"level": "Easy",
+"title": "Strong text #5",
+"code": "<bold>fish</strong>",
+"hint": "Bold text uses strong.",
+"expected": "HTML:{\"has\": [\"<strong>fish</strong>\"], \"not\": [\"<bold>fish</strong>\"]}"
+},
+{
+"level": "Easy",
+"title": "List item #1",
+"code": "<ul>\n  <item>cat</li>\n</ul>",
+"hint": "Items in a list use li.",
+"expected": "HTML:{\"has\": [\"<li>cat</li>\"], \"not\": [\"<item>cat</li>\"]}"
+},
+{
+"level": "Easy",
+"title": "List item #2",
+"code": "<ul>\n  <item>fish</li>\n</ul>",
+"hint": "Items in a list use li.",
+"expected": "HTML:{\"has\": [\"<li>fish</li>\"], \"not\": [\"<item>fish</li>\"]}"
+},
+{
+"level": "Easy",
+"title": "List item #3",
+"code": "<ul>\n  <item>star</li>\n</ul>",
+"hint": "Items in a list use li.",
+"expected": "HTML:{\"has\": [\"<li>star</li>\"], \"not\": [\"<item>star</li>\"]}"
+},
+{
+"level": "Easy",
+"title": "List item #4",
+"code": "<ul>\n  <item>moon</li>\n</ul>",
+"hint": "Items in a list use li.",
+"expected": "HTML:{\"has\": [\"<li>moon</li>\"], \"not\": [\"<item>moon</li>\"]}"
+},
+{
+"level": "Easy",
+"title": "List item #5",
+"code": "<ul>\n  <item>lake</li>\n</ul>",
+"hint": "Items in a list use li.",
+"expected": "HTML:{\"has\": [\"<li>lake</li>\"], \"not\": [\"<item>lake</li>\"]}"
+},
+{
+"level": "Easy",
+"title": "Quote the attribute #1",
+"code": "<p class=moon>Text</p>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<p class=\\\"moon\\\">Text</p>\"], \"not\": [\"<p class=moon>Text</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Quote the attribute #2",
+"code": "<p class=lake>Text</p>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<p class=\\\"lake\\\">Text</p>\"], \"not\": [\"<p class=lake>Text</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Quote the attribute #3",
+"code": "<p class=home>Text</p>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<p class=\\\"home\\\">Text</p>\"], \"not\": [\"<p class=home>Text</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Quote the attribute #4",
+"code": "<p class=book>Text</p>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<p class=\\\"book\\\">Text</p>\"], \"not\": [\"<p class=book>Text</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Quote the attribute #5",
+"code": "<p class=fish>Text</p>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<p class=\\\"fish\\\">Text</p>\"], \"not\": [\"<p class=fish>Text</p>\"]}"
+},
+{
+"level": "Easy",
+"title": "Page title #1",
+"code": "<head>\n  <titel>star</title>\n</head>",
+"hint": "The tag is called title.",
+"expected": "HTML:{\"has\": [\"<title>star</title>\"], \"not\": [\"<titel>star</title>\"]}"
+},
+{
+"level": "Easy",
+"title": "Page title #2",
+"code": "<head>\n  <titel>dog</title>\n</head>",
+"hint": "The tag is called title.",
+"expected": "HTML:{\"has\": [\"<title>dog</title>\"], \"not\": [\"<titel>dog</title>\"]}"
+},
+{
+"level": "Easy",
+"title": "Page title #3",
+"code": "<head>\n  <titel>tree</title>\n</head>",
+"hint": "The tag is called title.",
+"expected": "HTML:{\"has\": [\"<title>tree</title>\"], \"not\": [\"<titel>tree</title>\"]}"
+},
+{
+"level": "Easy",
+"title": "Page title #4",
+"code": "<head>\n  <titel>book</title>\n</head>",
+"hint": "The tag is called title.",
+"expected": "HTML:{\"has\": [\"<title>book</title>\"], \"not\": [\"<titel>book</title>\"]}"
+},
+{
+"level": "Easy",
+"title": "Page title #5",
+"code": "<head>\n  <titel>lake</title>\n</head>",
+"hint": "The tag is called title.",
+"expected": "HTML:{\"has\": [\"<title>lake</title>\"], \"not\": [\"<titel>lake</title>\"]}"
+},
+{
+"level": "Easy",
+"title": "Button tag #1",
+"code": "<buton>fish</button>",
+"hint": "Check the spelling of button.",
+"expected": "HTML:{\"has\": [\"<button>fish</button>\"], \"not\": [\"<buton>fish</button>\"]}"
+},
+{
+"level": "Easy",
+"title": "Button tag #2",
+"code": "<buton>cat</button>",
+"hint": "Check the spelling of button.",
+"expected": "HTML:{\"has\": [\"<button>cat</button>\"], \"not\": [\"<buton>cat</button>\"]}"
+},
+{
+"level": "Easy",
+"title": "Button tag #3",
+"code": "<buton>book</button>",
+"hint": "Check the spelling of button.",
+"expected": "HTML:{\"has\": [\"<button>book</button>\"], \"not\": [\"<buton>book</button>\"]}"
+},
+{
+"level": "Easy",
+"title": "Button tag #4",
+"code": "<buton>home</button>",
+"hint": "Check the spelling of button.",
+"expected": "HTML:{\"has\": [\"<button>home</button>\"], \"not\": [\"<buton>home</button>\"]}"
+},
+{
+"level": "Easy",
+"title": "Button tag #5",
+"code": "<buton>lake</button>",
+"hint": "Check the spelling of button.",
+"expected": "HTML:{\"has\": [\"<button>lake</button>\"], \"not\": [\"<buton>lake</button>\"]}"
+},
+{
+"level": "Easy",
+"title": "Heading level #1",
+"code": "<h7>book</h2>",
+"hint": "Headings go from h1 to h6.",
+"expected": "HTML:{\"has\": [\"<h2>book</h2>\"], \"not\": [\"<h7>book</h2>\"]}"
+},
+{
+"level": "Easy",
+"title": "Heading level #2",
+"code": "<h7>tree</h2>",
+"hint": "Headings go from h1 to h6.",
+"expected": "HTML:{\"has\": [\"<h2>tree</h2>\"], \"not\": [\"<h7>tree</h2>\"]}"
+},
+{
+"level": "Easy",
+"title": "Heading level #3",
+"code": "<h7>sun</h2>",
+"hint": "Headings go from h1 to h6.",
+"expected": "HTML:{\"has\": [\"<h2>sun</h2>\"], \"not\": [\"<h7>sun</h2>\"]}"
+},
+{
+"level": "Easy",
+"title": "Heading level #4",
+"code": "<h7>cat</h2>",
+"hint": "Headings go from h1 to h6.",
+"expected": "HTML:{\"has\": [\"<h2>cat</h2>\"], \"not\": [\"<h7>cat</h2>\"]}"
+},
+{
+"level": "Easy",
+"title": "Heading level #5",
+"code": "<h7>road</h2>",
+"hint": "Headings go from h1 to h6.",
+"expected": "HTML:{\"has\": [\"<h2>road</h2>\"], \"not\": [\"<h7>road</h2>\"]}"
+},
+{
+"level": "Medium",
+"title": "Color property #1",
+"code": "p { colour: green; }",
+"hint": "CSS spells it color.",
+"expected": "HTML:{\"has\": [\"p { color: green; }\"], \"not\": [\"p { colour: green; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Color property #2",
+"code": "p { colour: blue; }",
+"hint": "CSS spells it color.",
+"expected": "HTML:{\"has\": [\"p { color: blue; }\"], \"not\": [\"p { colour: blue; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Color property #3",
+"code": "p { colour: teal; }",
+"hint": "CSS spells it color.",
+"expected": "HTML:{\"has\": [\"p { color: teal; }\"], \"not\": [\"p { colour: teal; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Color property #4",
+"code": "p { colour: orange; }",
+"hint": "CSS spells it color.",
+"expected": "HTML:{\"has\": [\"p { color: orange; }\"], \"not\": [\"p { colour: orange; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Color property #5",
+"code": "p { colour: pink; }",
+"hint": "CSS spells it color.",
+"expected": "HTML:{\"has\": [\"p { color: pink; }\"], \"not\": [\"p { colour: pink; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Missing semicolon #1",
+"code": "h1 { color: gray }",
+"hint": "End each CSS value with a semicolon.",
+"expected": "HTML:{\"has\": [\"h1 { color: gray; }\"], \"not\": [\"h1 { color: gray }\"]}"
+},
+{
+"level": "Medium",
+"title": "Missing semicolon #2",
+"code": "h1 { color: teal }",
+"hint": "End each CSS value with a semicolon.",
+"expected": "HTML:{\"has\": [\"h1 { color: teal; }\"], \"not\": [\"h1 { color: teal }\"]}"
+},
+{
+"level": "Medium",
+"title": "Missing semicolon #3",
+"code": "h1 { color: purple }",
+"hint": "End each CSS value with a semicolon.",
+"expected": "HTML:{\"has\": [\"h1 { color: purple; }\"], \"not\": [\"h1 { color: purple }\"]}"
+},
+{
+"level": "Medium",
+"title": "Missing semicolon #4",
+"code": "h1 { color: brown }",
+"hint": "End each CSS value with a semicolon.",
+"expected": "HTML:{\"has\": [\"h1 { color: brown; }\"], \"not\": [\"h1 { color: brown }\"]}"
+},
+{
+"level": "Medium",
+"title": "Missing semicolon #5",
+"code": "h1 { color: navy }",
+"hint": "End each CSS value with a semicolon.",
+"expected": "HTML:{\"has\": [\"h1 { color: navy; }\"], \"not\": [\"h1 { color: navy }\"]}"
+},
+{
+"level": "Medium",
+"title": "Class selector #1",
+"code": "<style>\n  note { color: gray; }\n</style>\n<p class=\"note\">fish</p>",
+"hint": "A class selector starts with a dot.",
+"expected": "HTML:{\"has\": [\".note { color: gray; }\"], \"not\": [\"note { color: gray; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Class selector #2",
+"code": "<style>\n  note { color: navy; }\n</style>\n<p class=\"note\">cat</p>",
+"hint": "A class selector starts with a dot.",
+"expected": "HTML:{\"has\": [\".note { color: navy; }\"], \"not\": [\"note { color: navy; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Class selector #3",
+"code": "<style>\n  note { color: red; }\n</style>\n<p class=\"note\">moon</p>",
+"hint": "A class selector starts with a dot.",
+"expected": "HTML:{\"has\": [\".note { color: red; }\"], \"not\": [\"note { color: red; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Class selector #4",
+"code": "<style>\n  note { color: pink; }\n</style>\n<p class=\"note\">lake</p>",
+"hint": "A class selector starts with a dot.",
+"expected": "HTML:{\"has\": [\".note { color: pink; }\"], \"not\": [\"note { color: pink; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Class selector #5",
+"code": "<style>\n  note { color: orange; }\n</style>\n<p class=\"note\">star</p>",
+"hint": "A class selector starts with a dot.",
+"expected": "HTML:{\"has\": [\".note { color: orange; }\"], \"not\": [\"note { color: orange; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Pixel unit #1",
+"code": "h1 { font-size: 40; }",
+"hint": "A size needs a unit.",
+"expected": "HTML:{\"has\": [\"h1 { font-size: 40px; }\"], \"not\": [\"h1 { font-size: 40; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Pixel unit #2",
+"code": "h1 { font-size: 28; }",
+"hint": "A size needs a unit.",
+"expected": "HTML:{\"has\": [\"h1 { font-size: 28px; }\"], \"not\": [\"h1 { font-size: 28; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Pixel unit #3",
+"code": "h1 { font-size: 24; }",
+"hint": "A size needs a unit.",
+"expected": "HTML:{\"has\": [\"h1 { font-size: 24px; }\"], \"not\": [\"h1 { font-size: 24; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Pixel unit #4",
+"code": "h1 { font-size: 8; }",
+"hint": "A size needs a unit.",
+"expected": "HTML:{\"has\": [\"h1 { font-size: 8px; }\"], \"not\": [\"h1 { font-size: 8; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Pixel unit #5",
+"code": "h1 { font-size: 20; }",
+"hint": "A size needs a unit.",
+"expected": "HTML:{\"has\": [\"h1 { font-size: 20px; }\"], \"not\": [\"h1 { font-size: 20; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Background color #1",
+"code": "body { background-colour: gray; }",
+"hint": "The property is background-color.",
+"expected": "HTML:{\"has\": [\"body { background-color: gray; }\"], \"not\": [\"body { background-colour: gray; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Background color #2",
+"code": "body { background-colour: brown; }",
+"hint": "The property is background-color.",
+"expected": "HTML:{\"has\": [\"body { background-color: brown; }\"], \"not\": [\"body { background-colour: brown; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Background color #3",
+"code": "body { background-colour: pink; }",
+"hint": "The property is background-color.",
+"expected": "HTML:{\"has\": [\"body { background-color: pink; }\"], \"not\": [\"body { background-colour: pink; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Background color #4",
+"code": "body { background-colour: red; }",
+"hint": "The property is background-color.",
+"expected": "HTML:{\"has\": [\"body { background-color: red; }\"], \"not\": [\"body { background-colour: red; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Background color #5",
+"code": "body { background-colour: navy; }",
+"hint": "The property is background-color.",
+"expected": "HTML:{\"has\": [\"body { background-color: navy; }\"], \"not\": [\"body { background-colour: navy; }\"]}"
+},
+{
+"level": "Medium",
+"title": "ID selector #1",
+"code": "<style>\n  .main { color: blue; }\n</style>\n<div id=\"main\">lake</div>",
+"hint": "An id selector starts with #.",
+"expected": "HTML:{\"has\": [\"#main { color: blue; }\"], \"not\": [\".main { color: blue; }\"]}"
+},
+{
+"level": "Medium",
+"title": "ID selector #2",
+"code": "<style>\n  .main { color: purple; }\n</style>\n<div id=\"main\">sun</div>",
+"hint": "An id selector starts with #.",
+"expected": "HTML:{\"has\": [\"#main { color: purple; }\"], \"not\": [\".main { color: purple; }\"]}"
+},
+{
+"level": "Medium",
+"title": "ID selector #3",
+"code": "<style>\n  .main { color: red; }\n</style>\n<div id=\"main\">bird</div>",
+"hint": "An id selector starts with #.",
+"expected": "HTML:{\"has\": [\"#main { color: red; }\"], \"not\": [\".main { color: red; }\"]}"
+},
+{
+"level": "Medium",
+"title": "ID selector #4",
+"code": "<style>\n  .main { color: orange; }\n</style>\n<div id=\"main\">moon</div>",
+"hint": "An id selector starts with #.",
+"expected": "HTML:{\"has\": [\"#main { color: orange; }\"], \"not\": [\".main { color: orange; }\"]}"
+},
+{
+"level": "Medium",
+"title": "ID selector #5",
+"code": "<style>\n  .main { color: blue; }\n</style>\n<div id=\"main\">star</div>",
+"hint": "An id selector starts with #.",
+"expected": "HTML:{\"has\": [\"#main { color: blue; }\"], \"not\": [\".main { color: blue; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Border style #1",
+"code": "div { border: 2px soild purple; }",
+"hint": "Check the spelling of solid.",
+"expected": "HTML:{\"has\": [\"div { border: 2px solid purple; }\"], \"not\": [\"div { border: 2px soild purple; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Border style #2",
+"code": "div { border: 2px soild brown; }",
+"hint": "Check the spelling of solid.",
+"expected": "HTML:{\"has\": [\"div { border: 2px solid brown; }\"], \"not\": [\"div { border: 2px soild brown; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Border style #3",
+"code": "div { border: 2px soild gray; }",
+"hint": "Check the spelling of solid.",
+"expected": "HTML:{\"has\": [\"div { border: 2px solid gray; }\"], \"not\": [\"div { border: 2px soild gray; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Border style #4",
+"code": "div { border: 2px soild navy; }",
+"hint": "Check the spelling of solid.",
+"expected": "HTML:{\"has\": [\"div { border: 2px solid navy; }\"], \"not\": [\"div { border: 2px soild navy; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Border style #5",
+"code": "div { border: 2px soild teal; }",
+"hint": "Check the spelling of solid.",
+"expected": "HTML:{\"has\": [\"div { border: 2px solid teal; }\"], \"not\": [\"div { border: 2px soild teal; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Text align #1",
+"code": "h1 { text-align: centre; }",
+"hint": "The value is center.",
+"expected": "HTML:{\"has\": [\"h1 { text-align: center; }\"], \"not\": [\"h1 { text-align: centre; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Margin property #1",
+"code": "p { margins: 28px; }",
+"hint": "The property is margin.",
+"expected": "HTML:{\"has\": [\"p { margin: 28px; }\"], \"not\": [\"p { margins: 28px; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Margin property #2",
+"code": "p { margins: 32px; }",
+"hint": "The property is margin.",
+"expected": "HTML:{\"has\": [\"p { margin: 32px; }\"], \"not\": [\"p { margins: 32px; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Margin property #3",
+"code": "p { margins: 20px; }",
+"hint": "The property is margin.",
+"expected": "HTML:{\"has\": [\"p { margin: 20px; }\"], \"not\": [\"p { margins: 20px; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Margin property #4",
+"code": "p { margins: 24px; }",
+"hint": "The property is margin.",
+"expected": "HTML:{\"has\": [\"p { margin: 24px; }\"], \"not\": [\"p { margins: 24px; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Margin property #5",
+"code": "p { margins: 12px; }",
+"hint": "The property is margin.",
+"expected": "HTML:{\"has\": [\"p { margin: 12px; }\"], \"not\": [\"p { margins: 12px; }\"]}"
+},
+{
+"level": "Medium",
+"title": "Font weight #1",
+"code": "p { font-weight: heavy; }",
+"hint": "Bold text uses the value bold.",
+"expected": "HTML:{\"has\": [\"p { font-weight: bold; }\"], \"not\": [\"p { font-weight: heavy; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Flex display #1",
+"code": ".row { display: flexbox; gap: 8px; }",
+"hint": "The value is flex.",
+"expected": "HTML:{\"has\": [\".row { display: flex; gap: 8px; }\"], \"not\": [\".row { display: flexbox; gap: 8px; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Flex display #2",
+"code": ".row { display: flexbox; gap: 40px; }",
+"hint": "The value is flex.",
+"expected": "HTML:{\"has\": [\".row { display: flex; gap: 40px; }\"], \"not\": [\".row { display: flexbox; gap: 40px; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Flex display #3",
+"code": ".row { display: flexbox; gap: 32px; }",
+"hint": "The value is flex.",
+"expected": "HTML:{\"has\": [\".row { display: flex; gap: 32px; }\"], \"not\": [\".row { display: flexbox; gap: 32px; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Flex display #4",
+"code": ".row { display: flexbox; gap: 16px; }",
+"hint": "The value is flex.",
+"expected": "HTML:{\"has\": [\".row { display: flex; gap: 16px; }\"], \"not\": [\".row { display: flexbox; gap: 16px; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Flex display #5",
+"code": ".row { display: flexbox; gap: 20px; }",
+"hint": "The value is flex.",
+"expected": "HTML:{\"has\": [\".row { display: flex; gap: 20px; }\"], \"not\": [\".row { display: flexbox; gap: 20px; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Center items #1",
+"code": ".row { justify-content: middle; }",
+"hint": "The value is center.",
+"expected": "HTML:{\"has\": [\".row { justify-content: center; }\"], \"not\": [\".row { justify-content: middle; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Grid columns #1",
+"code": ".grid { display: grid; grid-template-columns: repeat(3 1fr); }",
+"hint": "Separate values with commas.",
+"expected": "HTML:{\"has\": [\".grid { display: grid; grid-template-columns: repeat(3, 1fr); }\"], \"not\": [\".grid { display: grid; grid-template-columns: repeat(3 1fr); }\"]}"
+},
+{
+"level": "Hard",
+"title": "Input type #1",
+"code": "<input type=\"txt\" name=\"book\">",
+"hint": "The type for text is text.",
+"expected": "HTML:{\"has\": [\"<input type=\\\"text\\\" name=\\\"book\\\">\"], \"not\": [\"<input type=\\\"txt\\\" name=\\\"book\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Input type #2",
+"code": "<input type=\"txt\" name=\"fish\">",
+"hint": "The type for text is text.",
+"expected": "HTML:{\"has\": [\"<input type=\\\"text\\\" name=\\\"fish\\\">\"], \"not\": [\"<input type=\\\"txt\\\" name=\\\"fish\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Input type #3",
+"code": "<input type=\"txt\" name=\"star\">",
+"hint": "The type for text is text.",
+"expected": "HTML:{\"has\": [\"<input type=\\\"text\\\" name=\\\"star\\\">\"], \"not\": [\"<input type=\\\"txt\\\" name=\\\"star\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Input type #4",
+"code": "<input type=\"txt\" name=\"cat\">",
+"hint": "The type for text is text.",
+"expected": "HTML:{\"has\": [\"<input type=\\\"text\\\" name=\\\"cat\\\">\"], \"not\": [\"<input type=\\\"txt\\\" name=\\\"cat\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Input type #5",
+"code": "<input type=\"txt\" name=\"lake\">",
+"hint": "The type for text is text.",
+"expected": "HTML:{\"has\": [\"<input type=\\\"text\\\" name=\\\"lake\\\">\"], \"not\": [\"<input type=\\\"txt\\\" name=\\\"lake\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Label and id #1",
+"code": "<label for=\"star\">Name</label>\n<input name=\"star\">",
+"hint": "A label for must match an id.",
+"expected": "HTML:{\"has\": [\"<input id=\\\"star\\\">\"], \"not\": [\"<input name=\\\"star\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Label and id #2",
+"code": "<label for=\"book\">Name</label>\n<input name=\"book\">",
+"hint": "A label for must match an id.",
+"expected": "HTML:{\"has\": [\"<input id=\\\"book\\\">\"], \"not\": [\"<input name=\\\"book\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Label and id #3",
+"code": "<label for=\"fish\">Name</label>\n<input name=\"fish\">",
+"hint": "A label for must match an id.",
+"expected": "HTML:{\"has\": [\"<input id=\\\"fish\\\">\"], \"not\": [\"<input name=\\\"fish\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Label and id #4",
+"code": "<label for=\"bird\">Name</label>\n<input name=\"bird\">",
+"hint": "A label for must match an id.",
+"expected": "HTML:{\"has\": [\"<input id=\\\"bird\\\">\"], \"not\": [\"<input name=\\\"bird\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Label and id #5",
+"code": "<label for=\"sun\">Name</label>\n<input name=\"sun\">",
+"hint": "A label for must match an id.",
+"expected": "HTML:{\"has\": [\"<input id=\\\"sun\\\">\"], \"not\": [\"<input name=\\\"sun\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Select option #1",
+"code": "<select>\n  <opt>moon</option>\n</select>",
+"hint": "Choices use option.",
+"expected": "HTML:{\"has\": [\"<option>moon</option>\"], \"not\": [\"<opt>moon</option>\"]}"
+},
+{
+"level": "Hard",
+"title": "Select option #2",
+"code": "<select>\n  <opt>tree</option>\n</select>",
+"hint": "Choices use option.",
+"expected": "HTML:{\"has\": [\"<option>tree</option>\"], \"not\": [\"<opt>tree</option>\"]}"
+},
+{
+"level": "Hard",
+"title": "Select option #3",
+"code": "<select>\n  <opt>sun</option>\n</select>",
+"hint": "Choices use option.",
+"expected": "HTML:{\"has\": [\"<option>sun</option>\"], \"not\": [\"<opt>sun</option>\"]}"
+},
+{
+"level": "Hard",
+"title": "Select option #4",
+"code": "<select>\n  <opt>home</option>\n</select>",
+"hint": "Choices use option.",
+"expected": "HTML:{\"has\": [\"<option>home</option>\"], \"not\": [\"<opt>home</option>\"]}"
+},
+{
+"level": "Hard",
+"title": "Select option #5",
+"code": "<select>\n  <opt>book</option>\n</select>",
+"hint": "Choices use option.",
+"expected": "HTML:{\"has\": [\"<option>book</option>\"], \"not\": [\"<opt>book</option>\"]}"
+},
+{
+"level": "Hard",
+"title": "Box shadow #1",
+"code": ".card { boxshadow: 0 2px 8px orange; }",
+"hint": "The property has a dash.",
+"expected": "HTML:{\"has\": [\".card { box-shadow: 0 2px 8px orange; }\"], \"not\": [\".card { boxshadow: 0 2px 8px orange; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Box shadow #2",
+"code": ".card { boxshadow: 0 2px 24px orange; }",
+"hint": "The property has a dash.",
+"expected": "HTML:{\"has\": [\".card { box-shadow: 0 2px 24px orange; }\"], \"not\": [\".card { boxshadow: 0 2px 24px orange; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Box shadow #3",
+"code": ".card { boxshadow: 0 2px 24px gray; }",
+"hint": "The property has a dash.",
+"expected": "HTML:{\"has\": [\".card { box-shadow: 0 2px 24px gray; }\"], \"not\": [\".card { boxshadow: 0 2px 24px gray; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Box shadow #4",
+"code": ".card { boxshadow: 0 2px 28px pink; }",
+"hint": "The property has a dash.",
+"expected": "HTML:{\"has\": [\".card { box-shadow: 0 2px 28px pink; }\"], \"not\": [\".card { boxshadow: 0 2px 28px pink; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Box shadow #5",
+"code": ".card { boxshadow: 0 2px 24px blue; }",
+"hint": "The property has a dash.",
+"expected": "HTML:{\"has\": [\".card { box-shadow: 0 2px 24px blue; }\"], \"not\": [\".card { boxshadow: 0 2px 24px blue; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Hover state #1",
+"code": "a:over { color: orange; }",
+"hint": "The pseudo-class is hover.",
+"expected": "HTML:{\"has\": [\"a:hover { color: orange; }\"], \"not\": [\"a:over { color: orange; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Hover state #2",
+"code": "a:over { color: purple; }",
+"hint": "The pseudo-class is hover.",
+"expected": "HTML:{\"has\": [\"a:hover { color: purple; }\"], \"not\": [\"a:over { color: purple; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Hover state #3",
+"code": "a:over { color: red; }",
+"hint": "The pseudo-class is hover.",
+"expected": "HTML:{\"has\": [\"a:hover { color: red; }\"], \"not\": [\"a:over { color: red; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Hover state #4",
+"code": "a:over { color: pink; }",
+"hint": "The pseudo-class is hover.",
+"expected": "HTML:{\"has\": [\"a:hover { color: pink; }\"], \"not\": [\"a:over { color: pink; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Hover state #5",
+"code": "a:over { color: blue; }",
+"hint": "The pseudo-class is hover.",
+"expected": "HTML:{\"has\": [\"a:hover { color: blue; }\"], \"not\": [\"a:over { color: blue; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Sticky menu #1",
+"code": ".menu { position: stick; top: 0; }",
+"hint": "The value is sticky.",
+"expected": "HTML:{\"has\": [\".menu { position: sticky; top: 0; }\"], \"not\": [\".menu { position: stick; top: 0; }\"]}"
+},
+{
+"level": "Hard",
+"title": "Form method #1",
+"code": "<form action=\"/send\" method=\"pots\">",
+"hint": "The method is post.",
+"expected": "HTML:{\"has\": [\"<form action=\\\"/send\\\" method=\\\"post\\\">\"], \"not\": [\"<form action=\\\"/send\\\" method=\\\"pots\\\">\"]}"
+},
+{
+"level": "Advanced",
+"title": "Media query #1",
+"code": "@media (max_width: 600px) { body { background: red; } }",
+"hint": "The feature is max-width.",
+"expected": "HTML:{\"has\": [\"@media (max-width: 600px) { body { background: red; } }\"], \"not\": [\"@media (max_width: 600px) { body { background: red; } }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Media query #2",
+"code": "@media (max_width: 600px) { body { background: green; } }",
+"hint": "The feature is max-width.",
+"expected": "HTML:{\"has\": [\"@media (max-width: 600px) { body { background: green; } }\"], \"not\": [\"@media (max_width: 600px) { body { background: green; } }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Media query #3",
+"code": "@media (max_width: 600px) { body { background: brown; } }",
+"hint": "The feature is max-width.",
+"expected": "HTML:{\"has\": [\"@media (max-width: 600px) { body { background: brown; } }\"], \"not\": [\"@media (max_width: 600px) { body { background: brown; } }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Media query #4",
+"code": "@media (max_width: 600px) { body { background: blue; } }",
+"hint": "The feature is max-width.",
+"expected": "HTML:{\"has\": [\"@media (max-width: 600px) { body { background: blue; } }\"], \"not\": [\"@media (max_width: 600px) { body { background: blue; } }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Media query #5",
+"code": "@media (max_width: 600px) { body { background: orange; } }",
+"hint": "The feature is max-width.",
+"expected": "HTML:{\"has\": [\"@media (max-width: 600px) { body { background: orange; } }\"], \"not\": [\"@media (max_width: 600px) { body { background: orange; } }\"]}"
+},
+{
+"level": "Advanced",
+"title": "CSS variable #1",
+"code": ":root { -color: teal; }",
+"hint": "Variables start with two dashes.",
+"expected": "HTML:{\"has\": [\":root { --color: teal; }\"], \"not\": [\":root { -color: teal; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "CSS variable #2",
+"code": ":root { -color: gray; }",
+"hint": "Variables start with two dashes.",
+"expected": "HTML:{\"has\": [\":root { --color: gray; }\"], \"not\": [\":root { -color: gray; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "CSS variable #3",
+"code": ":root { -color: green; }",
+"hint": "Variables start with two dashes.",
+"expected": "HTML:{\"has\": [\":root { --color: green; }\"], \"not\": [\":root { -color: green; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "CSS variable #4",
+"code": ":root { -color: blue; }",
+"hint": "Variables start with two dashes.",
+"expected": "HTML:{\"has\": [\":root { --color: blue; }\"], \"not\": [\":root { -color: blue; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "CSS variable #5",
+"code": ":root { -color: pink; }",
+"hint": "Variables start with two dashes.",
+"expected": "HTML:{\"has\": [\":root { --color: pink; }\"], \"not\": [\":root { -color: pink; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Use a variable #1",
+"code": "p { color: var(color); }",
+"hint": "Use var with the two dashes.",
+"expected": "HTML:{\"has\": [\"p { color: var(--color); }\"], \"not\": [\"p { color: var(color); }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Semantic nav #1",
+"code": "<header>\n  <div><a href=\"#\">Home</a></nav>\n</header>",
+"hint": "Navigation links belong in nav.",
+"expected": "HTML:{\"has\": [\"<nav><a href=\\\"#\\\">Home</a></nav>\"], \"not\": [\"<div><a href=\\\"#\\\">Home</a></nav>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Lazy loading #1",
+"code": "<img src=\"moon.png\" alt=\"moon\" loading=lazy>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"moon.png\\\" alt=\\\"moon\\\" loading=\\\"lazy\\\">\"], \"not\": [\"<img src=\\\"moon.png\\\" alt=\\\"moon\\\" loading=lazy>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Lazy loading #2",
+"code": "<img src=\"bird.png\" alt=\"bird\" loading=lazy>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"bird.png\\\" alt=\\\"bird\\\" loading=\\\"lazy\\\">\"], \"not\": [\"<img src=\\\"bird.png\\\" alt=\\\"bird\\\" loading=lazy>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Lazy loading #3",
+"code": "<img src=\"lake.png\" alt=\"lake\" loading=lazy>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"lake.png\\\" alt=\\\"lake\\\" loading=\\\"lazy\\\">\"], \"not\": [\"<img src=\\\"lake.png\\\" alt=\\\"lake\\\" loading=lazy>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Lazy loading #4",
+"code": "<img src=\"fish.png\" alt=\"fish\" loading=lazy>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"fish.png\\\" alt=\\\"fish\\\" loading=\\\"lazy\\\">\"], \"not\": [\"<img src=\\\"fish.png\\\" alt=\\\"fish\\\" loading=lazy>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Lazy loading #5",
+"code": "<img src=\"book.png\" alt=\"book\" loading=lazy>",
+"hint": "Attribute values need quotes.",
+"expected": "HTML:{\"has\": [\"<img src=\\\"book.png\\\" alt=\\\"book\\\" loading=\\\"lazy\\\">\"], \"not\": [\"<img src=\\\"book.png\\\" alt=\\\"book\\\" loading=lazy>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Focus style #1",
+"code": "button:focus-visibel { outline: 2px solid red; }",
+"hint": "The pseudo-class is focus-visible.",
+"expected": "HTML:{\"has\": [\"button:focus-visible { outline: 2px solid red; }\"], \"not\": [\"button:focus-visibel { outline: 2px solid red; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Focus style #2",
+"code": "button:focus-visibel { outline: 2px solid teal; }",
+"hint": "The pseudo-class is focus-visible.",
+"expected": "HTML:{\"has\": [\"button:focus-visible { outline: 2px solid teal; }\"], \"not\": [\"button:focus-visibel { outline: 2px solid teal; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Focus style #3",
+"code": "button:focus-visibel { outline: 2px solid gray; }",
+"hint": "The pseudo-class is focus-visible.",
+"expected": "HTML:{\"has\": [\"button:focus-visible { outline: 2px solid gray; }\"], \"not\": [\"button:focus-visibel { outline: 2px solid gray; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Focus style #4",
+"code": "button:focus-visibel { outline: 2px solid orange; }",
+"hint": "The pseudo-class is focus-visible.",
+"expected": "HTML:{\"has\": [\"button:focus-visible { outline: 2px solid orange; }\"], \"not\": [\"button:focus-visibel { outline: 2px solid orange; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Focus style #5",
+"code": "button:focus-visibel { outline: 2px solid brown; }",
+"hint": "The pseudo-class is focus-visible.",
+"expected": "HTML:{\"has\": [\"button:focus-visible { outline: 2px solid brown; }\"], \"not\": [\"button:focus-visibel { outline: 2px solid brown; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "ARIA label #1",
+"code": "<button aria-lable=\"Close\">X</button>",
+"hint": "The attribute is aria-label.",
+"expected": "HTML:{\"has\": [\"<button aria-label=\\\"Close\\\">X</button>\"], \"not\": [\"<button aria-lable=\\\"Close\\\">X</button>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Transition time #1",
+"code": ".box { transition: all 0.3 ease; }",
+"hint": "A time needs a unit.",
+"expected": "HTML:{\"has\": [\".box { transition: all 0.3s ease; }\"], \"not\": [\".box { transition: all 0.3 ease; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Keyframes name #1",
+"code": "@keyframes slide in { from { opacity: 0; } to { opacity: 1; } }",
+"hint": "Names use dashes, not spaces.",
+"expected": "HTML:{\"has\": [\"@keyframes slide-in { from { opacity: 0; } to { opacity: 1; } }\"], \"not\": [\"@keyframes slide in { from { opacity: 0; } to { opacity: 1; } }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Clamp function #1",
+"code": ".title { font-size: clamp(1rem 2vw 2rem); }",
+"hint": "Separate values with commas.",
+"expected": "HTML:{\"has\": [\".title { font-size: clamp(1rem, 2vw, 2rem); }\"], \"not\": [\".title { font-size: clamp(1rem 2vw 2rem); }\"]}"
+},
+{
+"level": "Medium",
+"title": "Link target",
+"code": "<a href=\"https://example.com\" target=\"blank\">Visit</a>",
+"hint": "The value that opens a new tab starts with an underscore.",
+"expected": "HTML:{\"has\": [\"target=\\\"_blank\\\"\"], \"not\": [\"target=\\\"blank\\\"\"]}"
+},
+{
+"level": "Medium",
+"title": "Image alt text",
+"code": "<img src=\"cat.png\" altt=\"A cat\">",
+"hint": "The attribute for the picture description is spelled alt.",
+"expected": "HTML:{\"has\": [\"alt=\\\"A cat\\\"\"], \"not\": [\"altt=\\\"A cat\\\"\"]}"
+},
+{
+"level": "Medium",
+"title": "Ordered list",
+"code": "<ol><li>One</li><li>Two</li></ul>",
+"hint": "Close the list with the same kind of tag you opened.",
+"expected": "HTML:{\"has\": [\"<li>Two</li></ol>\"], \"not\": [\"<li>Two</li></ul>\"]}"
+},
+{
+"level": "Medium",
+"title": "Table cell",
+"code": "<table><tr><td>Ana</tr></table>",
+"hint": "A cell must be closed with its own tag.",
+"expected": "HTML:{\"has\": [\"<td>Ana</td>\"], \"not\": [\"<td>Ana</tr>\"]}"
+},
+{
+"level": "Medium",
+"title": "Comment syntax",
+"code": "<!- This is a comment ->",
+"hint": "An HTML comment starts with two dashes and ends with two dashes.",
+"expected": "HTML:{\"has\": [\"<!-- This is a comment -->\"], \"not\": [\"<!- This is a comment ->\"]}"
+},
+{
+"level": "Medium",
+"title": "Line break",
+"code": "<p>Line one</br>Line two</p>",
+"hint": "The line break tag has no closing tag. It is just br.",
+"expected": "HTML:{\"has\": [\"Line one<br>Line two\"], \"not\": [\"Line one</br>Line two\"]}"
+},
+{
+"level": "Medium",
+"title": "Text decoration",
+"code": "h1 { text-decoration: underlined; }",
+"hint": "The value is underline.",
+"expected": "HTML:{\"has\": [\"text-decoration: underline;\"], \"not\": [\"text-decoration: underlined\"]}"
+},
+{
+"level": "Medium",
+"title": "Padding spelling",
+"code": "div { pading: 10px; }",
+"hint": "Check how padding is spelled.",
+"expected": "HTML:{\"has\": [\"padding: 10px\"], \"not\": [\"pading: 10px\"]}"
+},
+{
+"level": "Hard",
+"title": "Viewport meta",
+"code": "<meta name=\"viewport\" content=\"width=device-width initial-scale=1\">",
+"hint": "Separate the two settings with a comma.",
+"expected": "HTML:{\"has\": [\"width=device-width, initial-scale=1\"], \"not\": [\"width=device-width initial-scale=1\"]}"
+},
+{
+"level": "Hard",
+"title": "Doctype line",
+"code": "<!DOCTYPE>\n<html><body>Hi</body></html>",
+"hint": "The doctype needs the word html after it.",
+"expected": "HTML:{\"has\": [\"<!DOCTYPE html>\"], \"not\": [\"<!DOCTYPE>\"]}"
+},
+{
+"level": "Hard",
+"title": "Stylesheet link",
+"code": "<link rel=\"stylesheets\" href=\"style.css\">",
+"hint": "The rel value is singular.",
+"expected": "HTML:{\"has\": [\"rel=\\\"stylesheet\\\"\"], \"not\": [\"rel=\\\"stylesheets\\\"\"]}"
+},
+{
+"level": "Hard",
+"title": "Script file",
+"code": "<script href=\"app.js\"></script>",
+"hint": "A script file is loaded with src, not href.",
+"expected": "HTML:{\"has\": [\"<script src=\\\"app.js\\\">\"], \"not\": [\"<script href=\\\"app.js\\\">\"]}"
+},
+{
+"level": "Hard",
+"title": "Submit button",
+"code": "<form><button type=\"sumbit\">Send</button></form>",
+"hint": "Check the spelling of submit.",
+"expected": "HTML:{\"has\": [\"type=\\\"submit\\\"\"], \"not\": [\"type=\\\"sumbit\\\"\"]}"
+},
+{
+"level": "Hard",
+"title": "Checkbox type",
+"code": "<input type=\"check box\">",
+"hint": "The type is one word.",
+"expected": "HTML:{\"has\": [\"type=\\\"checkbox\\\"\"], \"not\": [\"type=\\\"check box\\\"\"]}"
+},
+{
+"level": "Hard",
+"title": "Textarea closing",
+"code": "<textarea rows=\"3\" cols=\"30\"/>",
+"hint": "Textarea needs a real closing tag.",
+"expected": "HTML:{\"has\": [\"<textarea rows=\\\"3\\\" cols=\\\"30\\\"></textarea>\"], \"not\": [\"<textarea rows=\\\"3\\\" cols=\\\"30\\\"/>\"]}"
+},
+{
+"level": "Hard",
+"title": "Placeholder spelling",
+"code": "<input type=\"text\" placehoder=\"Name\">",
+"hint": "The attribute is placeholder.",
+"expected": "HTML:{\"has\": [\"placeholder=\\\"Name\\\"\"], \"not\": [\"placehoder=\\\"Name\\\"\"]}"
+},
+{
+"level": "Hard",
+"title": "Relative position",
+"code": ".box { position: relatve; }",
+"hint": "Check the spelling of relative.",
+"expected": "HTML:{\"has\": [\"position: relative;\"], \"not\": [\"position: relatve\"]}"
+},
+{
+"level": "Hard",
+"title": "Z-index value",
+"code": ".menu { z-index: high; }",
+"hint": "z-index needs a number.",
+"expected": "HTML:{\"has\": [\"z-index: 10\"], \"not\": [\"z-index: high\"]}"
+},
+{
+"level": "Hard",
+"title": "Overflow scroll",
+"code": ".box { overflow: scrol; }",
+"hint": "The value is scroll.",
+"expected": "HTML:{\"has\": [\"overflow: scroll;\"], \"not\": [\"overflow: scrol;\"]}"
+},
+{
+"level": "Hard",
+"title": "Grid gap unit",
+"code": ".grid { display: grid; grid-gap: 10; }",
+"hint": "Lengths need a unit such as px.",
+"expected": "HTML:{\"has\": [\"grid-gap: 10px\"], \"not\": [\"grid-gap: 10;\"]}"
+},
+{
+"level": "Hard",
+"title": "Flex direction",
+"code": ".row { display: flex; flex-direction: columns; }",
+"hint": "The value is column, not columns.",
+"expected": "HTML:{\"has\": [\"flex-direction: column;\"], \"not\": [\"flex-direction: columns\"]}"
+},
+{
+"level": "Hard",
+"title": "Spread items",
+"code": ".row { display: flex; justify-content: center-space; }",
+"hint": "The value that pushes items to both ends is space-between.",
+"expected": "HTML:{\"has\": [\"justify-content: space-between\"], \"not\": [\"justify-content: center-space\"]}"
+},
+{
+"level": "Hard",
+"title": "Opacity decimal",
+"code": ".img { opacity: 0,5; }",
+"hint": "Decimals use a dot, not a comma.",
+"expected": "HTML:{\"has\": [\"opacity: 0.5\"], \"not\": [\"opacity: 0,5\"]}"
+},
+{
+"level": "Hard",
+"title": "Radius unit",
+"code": ".card { border-radius: 10 px; }",
+"hint": "Do not leave a space between 10 and px.",
+"expected": "HTML:{\"has\": [\"border-radius: 10px\"], \"not\": [\"border-radius: 10 px\"]}"
+},
+{
+"level": "Advanced",
+"title": "Before pseudo-element",
+"code": "p::befor { content: \"*\"; }",
+"hint": "Check the spelling of before.",
+"expected": "HTML:{\"has\": [\"p::before\"], \"not\": [\"p::befor\"]}"
+},
+{
+"level": "Advanced",
+"title": "nth-child bracket",
+"code": "li:nth-child(odd { color: red; }",
+"hint": "Close the bracket after odd.",
+"expected": "HTML:{\"has\": [\"li:nth-child(odd)\"], \"not\": [\"li:nth-child(odd {\"]}"
+},
+{
+"level": "Advanced",
+"title": "Grid template columns",
+"code": ".grid { display: grid; grid-template-column: 1fr 1fr; }",
+"hint": "The property name ends with an s.",
+"expected": "HTML:{\"has\": [\"grid-template-columns: 1fr 1fr\"], \"not\": [\"grid-template-column: 1fr 1fr\"]}"
+},
+{
+"level": "Advanced",
+"title": "Calc spacing",
+"code": ".box { width: calc(100%-20px); }",
+"hint": "Put spaces around the minus sign inside calc.",
+"expected": "HTML:{\"has\": [\"calc(100% - 20px)\"], \"not\": [\"calc(100%-20px)\"]}"
+},
+{
+"level": "Advanced",
+"title": "rgba alpha",
+"code": ".box { color: rgba(0, 0, 0, 50); }",
+"hint": "Alpha goes from 0 to 1.",
+"expected": "HTML:{\"has\": [\"rgba(0, 0, 0, 0.5)\"], \"not\": [\"rgba(0, 0, 0, 50)\"]}"
+},
+{
+"level": "Advanced",
+"title": "Important flag",
+"code": "p { color: red !importnat; }",
+"hint": "Check the spelling of important.",
+"expected": "HTML:{\"has\": [\"!important\"], \"not\": [\"!importnat\"]}"
+},
+{
+"level": "Advanced",
+"title": "Attribute selector",
+"code": "input[type=text { border: 1px solid; }",
+"hint": "Close the square bracket and quote the value.",
+"expected": "HTML:{\"has\": [\"input[type=\\\"text\\\"]\"], \"not\": [\"input[type=text {\"]}"
+},
+{
+"level": "Advanced",
+"title": "Rotate unit",
+"code": ".box { transform: rotate(45); }",
+"hint": "Angles need the unit deg.",
+"expected": "HTML:{\"has\": [\"rotate(45deg)\"], \"not\": [\"rotate(45)\"]}"
+},
+{
+"level": "Advanced",
+"title": "Transition seconds",
+"code": "a { transition: color 0.3 ease; }",
+"hint": "Time needs the unit s.",
+"expected": "HTML:{\"has\": [\"0.3s ease\"], \"not\": [\"0.3 ease\"]}"
+},
+{
+"level": "Advanced",
+"title": "Animation infinite",
+"code": ".dot { animation: pulse 2s infinit; }",
+"hint": "Check the spelling of infinite.",
+"expected": "HTML:{\"has\": [\"animation: pulse 2s infinite;\"], \"not\": [\"infinit;\"]}"
+},
+{
+"level": "Advanced",
+"title": "Keyframe percent",
+"code": "@keyframes grow { 0% { width: 0; } 100 { width: 100px; } }",
+"hint": "Keyframe steps use the percent sign.",
+"expected": "HTML:{\"has\": [\"100% { width: 100px; }\"], \"not\": [\"100 { width: 100px; }\"]}"
+},
+{
+"level": "Advanced",
+"title": "Custom property name",
+"code": ".theme { color-main: blue; }\n.theme p { color: var(--color-main); }",
+"hint": "Custom properties begin with two dashes.",
+"expected": "HTML:{\"has\": [\"--color-main: blue\"], \"not\": [\"{ color-main: blue\"]}"
+},
+{
+"level": "Advanced",
+"title": "Video closing tag",
+"code": "<video controls src=\"movie.mp4\"/>",
+"hint": "Video needs a real closing tag.",
+"expected": "HTML:{\"has\": [\"<video controls src=\\\"movie.mp4\\\"></video>\"], \"not\": [\"<video controls src=\\\"movie.mp4\\\"/>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Iframe width",
+"code": "<iframe src=\"page.html\" widht=\"300\"></iframe>",
+"hint": "Check the spelling of width.",
+"expected": "HTML:{\"has\": [\"width=\\\"300\\\"\"], \"not\": [\"widht=\\\"300\\\"\"]}"
+},
+{
+"level": "Advanced",
+"title": "Charset name",
+"code": "<meta charset=\"utf8\">",
+"hint": "The usual name has a dash.",
+"expected": "HTML:{\"has\": [\"charset=\\\"utf-8\\\"\"], \"not\": [\"charset=\\\"utf8\\\"\"]}"
+},
+{
+"level": "Advanced",
+"title": "Language attribute",
+"code": "<html lan=\"en\">",
+"hint": "The attribute is lang.",
+"expected": "HTML:{\"has\": [\"<html lang=\\\"en\\\">\"], \"not\": [\"<html lan=\\\"en\\\">\"]}"
+},
+{
+"level": "Advanced",
+"title": "Section closing tag",
+"code": "<section><h2>Title</h2></sectoin>",
+"hint": "Check how section is spelled in the closing tag.",
+"expected": "HTML:{\"has\": [\"</section>\"], \"not\": [\"</sectoin>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Figure caption",
+"code": "<figure><img src=\"a.png\" alt=\"A\"><figcaption>Caption</figcation></figure>",
+"hint": "Check the closing figcaption tag.",
+"expected": "HTML:{\"has\": [\"</figcaption>\"], \"not\": [\"</figcation>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Details closing tag",
+"code": "<details><summary>More</summary><p>Text</p></detail>",
+"hint": "The closing tag matches the opening tag: details.",
+"expected": "HTML:{\"has\": [\"</details>\"], \"not\": [\"</detail>\"]}"
+},
+{
+"level": "Advanced",
+"title": "Media query colon",
+"code": "@media (min-width 600px) { p { color: red; } }",
+"hint": "A feature and its value are separated by a colon.",
+"expected": "HTML:{\"has\": [\"(min-width: 600px)\"], \"not\": [\"(min-width 600px)\"]}"
+},
+{
+"level": "Advanced",
+"title": "Font family list",
+"code": "body { font-family: Arial sans-serif; }",
+"hint": "Separate font names with a comma.",
+"expected": "HTML:{\"has\": [\"font-family: Arial, sans-serif\"], \"not\": [\"font-family: Arial sans-serif\"]}"
+},
+{
+"level": "Advanced",
+"title": "Visited link",
+"code": "a:visted { color: purple; }",
+"hint": "Check the spelling of visited.",
+"expected": "HTML:{\"has\": [\"a:visited\"], \"not\": [\"a:visted\"]}"
+},
+{
+"level": "Advanced",
+"title": "Selector list",
+"code": "h1, h2 h3 { color: navy; }",
+"hint": "Separate every selector with a comma.",
+"expected": "HTML:{\"has\": [\"h1, h2, h3\"], \"not\": [\"h1, h2 h3\"]}"
+},
+{
+"level": "Advanced",
+"title": "Aspect ratio",
+"code": ".video { aspect-ratio: 16 9; }",
+"hint": "Use a slash between the two numbers.",
+"expected": "HTML:{\"has\": [\"aspect-ratio: 16 / 9\"], \"not\": [\"aspect-ratio: 16 9\"]}"
+}
+]

@@ -1,0 +1,13 @@
+# Pictures of code exams. Nobody can open this folder directly: the pictures are shown by Exam/attachment.php,
+# which checks that the person may see them. PHP never runs here.
+Options -Indexes
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order allow,deny
+Deny from all
+</IfModule>
+<IfModule mod_php.c>
+php_flag engine off
+</IfModule>

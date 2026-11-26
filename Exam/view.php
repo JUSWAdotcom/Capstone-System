@@ -1,0 +1,20 @@
+<?php require __DIR__.'/../config.php';$u=need('teacher');$aid=(int)($_GET['aid']??$_POST['aid']??0);
+// FULL SCREEN VIEWER for the teacher: the code of one student in the editor, the output or the web page, and the grade box.
+// Previous / Next go through the students who submitted. "Full screen" fills the whole screen; the button on OUTPUT / PREVIEW shows only the result.
+$s=$pdo->prepare('SELECT a.*,u.full_name,u.student_id sid,(SELECT COUNT(*) FROM exam_events c WHERE c.attempt_id=a.id AND c.event_type IN '.FLAG_SQL.') fl FROM exam_attempts a JOIN users u ON u.id=a.student_id JOIN coding_exams x ON x.id=a.exam_id WHERE a.id=? AND x.teacher_id=? AND a.submitted_at IS NOT NULL');$s->execute([$aid,$u['id']]);$a=$s->fetch();
+if(!$a){header('Location: '.BASE.'Exam/exams.php');exit;}
+$s=$pdo->prepare('SELECT * FROM coding_exams WHERE id=?');$s->execute([$a['exam_id']]);$x=$s->fetch();
+if($_SERVER['REQUEST_METHOD']==='POST'){check();if(exam_grade($x,$aid,$_POST['score']??0,$_POST['feedback']??''))flash('Grade saved for '.$a['full_name'].'.');
+$go=(int)($_POST['next']??0);header('Location: '.BASE.'Exam/view.php?aid='.($go?:$aid));exit;}
+$s=$pdo->prepare('SELECT a.id FROM exam_attempts a JOIN users u ON u.id=a.student_id WHERE a.exam_id=? AND a.submitted_at IS NOT NULL ORDER BY u.full_name,a.id');$s->execute([$x['id']]);$ids=array_map('intval',$s->fetchAll(PDO::FETCH_COLUMN));
+$i=array_search($aid,$ids,true);$prev=$i>0?$ids[$i-1]:0;$next=$i!==false&&$i<count($ids)-1?$ids[$i+1]:0;
+$web=in_array($x['language'],['html','web'],true);
+$prob='<p><b>'.e($a['full_name']).'</b><br><small>'.e($a['sid']).'</small></p><p>Submitted '.e(when($a['submitted_at'])).'<br>'.($web?'Look at the page in PREVIEW.':'Output matched: <b>'.($a['passed']?'Yes':'No').'</b>').'<br>Left the page: <b>'.(int)$a['fl'].'</b></p><p>'.($a['score']===null?'<span class="st st-going">Not graded yet</span>':'<span class="st st-done">'.(int)$a['score'].' / '.(int)$x['max_points'].'</span>').'</p><hr style="border:0;border-top:1px solid #2b2b2b"><p><b>Problem</b><br>'.nl2br(e($x['prompt'])).'</p>'.($x['expected_output']!==''?'<p><b>Expected output</b></p><pre style="margin:0;padding:.5rem;background:#111;border-radius:6px;white-space:pre-wrap;font-size:.8rem">'.e($x['expected_output']).'</pre>':'').picture_html($x);
+$tools='<a class="btn alt" href="Exam/exam_results.php?id='.(int)$x['id'].'">All students</a>'.($prev?'<a class="btn alt" href="Exam/view.php?aid='.$prev.'" title="Previous student">&larr;</a>':'').'<small style="color:#8b949e">'.($i===false?'':($i+1).' of '.count($ids)).'</small>'.($next?'<a class="btn alt" href="Exam/view.php?aid='.$next.'" title="Next student">&rarr;</a>':'')
+.'<form method="post" class="ide-grade"><input type="hidden" name="t" value="'.csrf().'"><input type="hidden" name="aid" value="'.$aid.'"><input type="hidden" name="next" value="'.$next.'"><input type="number" name="score" min="0" max="'.(int)$x['max_points'].'" value="'.($a['score']===null?'':(int)$a['score']).'" placeholder="Score" required aria-label="Score"><small style="color:#8b949e">/ '.(int)$x['max_points'].'</small><input name="feedback" maxlength="500" placeholder="Feedback" value="'.e($a['feedback']).'" aria-label="Feedback"><button>'.($next?'Save + next':'Save').'</button></form>'
+.'<button type="button" class="ide-run" data-ide-run>'.ico('play').'Run</button><button type="button" class="alt" id="ide-fs">'.ico('full').'</button>';
+head($x['title'].': '.$a['full_name']);flash();
+echo ide_html($x['title'].' - '.$a['full_name'],$prob,$tools);
+echo '<script src="assets/ide.js?v=48.1"></script><script>IDE.mount('.json_encode(['lang'=>$x['language'],'files'=>exam_files($x['language'],$a['code'])?:new stdClass(),'readOnly'=>true,'T'=>csrf(),'autorun'=>$web]+($web?[]:['output'=>"Output when the student submitted:\n\n".((string)$a['output']!==''?$a['output']:'(nothing)')."\n\nPress Run to run the code again."])).');
+document.getElementById("ide-fs").onclick=function(){var d=document.getElementById("ide");if(document.fullscreenElement)document.exitFullscreen();else if(d.requestFullscreen)d.requestFullscreen()}</script>';
+foot();

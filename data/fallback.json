@@ -1,0 +1,581 @@
+{
+"prog": [
+{
+"re": "recurs|divide and conquer|backtrack|dynamic",
+"out": "3\n2\n1\nDone",
+"code": {
+"python": "def countdown(n):\n    if n == 0:\n        print(\"Done\")\n        return\n    print(n)\n    countdown(n - 1)\n\ncountdown(3)",
+"javascript": "function countdown(n) {\n  if (n === 0) {\n    console.log(\"Done\");\n    return;\n  }\n  console.log(n);\n  countdown(n - 1);\n}\ncountdown(3);",
+"cpp": "!#include <iostream>\nusing namespace std;\n\nvoid countdown(int n) {\n    if (n == 0) {\n        cout << \"Done\" << endl;\n        return;\n    }\n    cout << n << endl;\n    countdown(n - 1);\n}\n\nint main() {\n    countdown(3);\n    return 0;\n}",
+"csharp": "void Countdown(int n)\n{\n    if (n == 0)\n    {\n        Console.WriteLine(\"Done\");\n        return;\n    }\n    Console.WriteLine(n);\n    Countdown(n - 1);\n}\n\nCountdown(3);",
+"php": "function countdown($n) {\n    if ($n == 0) {\n        echo \"Done\" . PHP_EOL;\n        return;\n    }\n    echo $n . PHP_EOL;\n    countdown($n - 1);\n}\ncountdown(3);"
+},
+"what": "**Recursion** means a function **calls itself** to solve a smaller version of the same problem. To count down from 3, print 3, then count down from 2, and so on. Every recursive function needs a **base case**, the point where it stops calling itself.",
+"why": "Some problems are made of smaller copies of themselves, such as countdowns, factorials and folders inside folders. Recursion lets you write them in a few clear lines.",
+"steps": [
+"The function checks the base case first. When n is 0 it prints Done and stops.",
+"If it is not the base case, it prints the current number.",
+"Then it calls itself with a smaller number (n - 1), so it moves closer to the base case.",
+"The first call starts the chain: 3, 2, 1, then Done."
+],
+"mistakes": [
+"Forgetting the base case, so the function calls itself forever and the program crashes.",
+"Calling itself with the same number instead of a smaller one."
+],
+"practice": [
+"Change the start number to 5.",
+"Write a recursive function that adds the numbers from 1 to n."
+],
+"focus": [
+[
+"dynamic",
+"**Dynamic programming** starts with recursion and then **remembers** answers it already found so it does not repeat work. Learn the recursion idea below first."
+],
+[
+"backtrack",
+"**Backtracking** tries a choice, and if it fails it goes back and tries another one. It is built on recursion like the example below."
+],
+[
+"divide",
+"**Divide and conquer** splits a problem into smaller parts, solves each part, then joins the answers. Recursion solves each part."
+]
+]
+},
+{
+"re": "class|object|inherit|polymorph|interface|constructor|encapsul|abstract|struct|record|propert|access|static|enum|design|pattern|solid",
+"out": "Rex says woof",
+"code": {
+"python": "class Dog:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        print(self.name + \" says woof\")\n\nd = Dog(\"Rex\")\nd.speak()",
+"javascript": "class Dog {\n  constructor(name) {\n    this.name = name;\n  }\n  speak() {\n    console.log(this.name + \" says woof\");\n  }\n}\nconst d = new Dog(\"Rex\");\nd.speak();",
+"cpp": "!#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Dog {\npublic:\n    string name;\n    void speak() { cout << name << \" says woof\" << endl; }\n};\n\nint main() {\n    Dog d;\n    d.name = \"Rex\";\n    d.speak();\n    return 0;\n}",
+"csharp": "var d = new Dog { Name = \"Rex\" };\nd.Speak();\n\nclass Dog\n{\n    public string Name;\n    public void Speak() { Console.WriteLine(Name + \" says woof\"); }\n}",
+"php": "class Dog {\n    public $name;\n    function speak() {\n        echo $this->name . \" says woof\" . PHP_EOL;\n    }\n}\n$d = new Dog();\n$d->name = \"Rex\";\n$d->speak();"
+},
+"what": "A **class** is a plan (blueprint) for making things of the same kind. A Dog class says every dog has a **name** and can **speak**. An **object** is one real dog made from that plan. The data inside an object is called its **attributes** and its actions are called **methods**.",
+"why": "Classes keep related data and actions together, so big programs stay organized and you can make many objects without copying code.",
+"steps": [
+"We write the class once. It is only the plan, so nothing runs yet.",
+"The special first method (the **constructor**) runs when an object is created and saves the name inside it.",
+"The speak method uses the saved name to print a message.",
+"We create an object from the class and call its method with a dot."
+],
+"mistakes": [
+"Forgetting the word that means this object (self in Python, this in JavaScript, C# and PHP).",
+"Calling a method on the class instead of on an object you created.",
+"Forgetting the brackets () when creating the object or calling the method."
+],
+"practice": [
+"Change the name from Rex to your own name.",
+"Create a second object with another name and call speak on it."
+],
+"focus": [
+[
+"constructor",
+"A **constructor** is the special method that runs automatically when you create an object. Its job is to give the object its starting values."
+],
+[
+"inherit",
+"**Inheritance** lets a new class reuse everything from another class and then add or change things. The example shows the basic class you build on."
+],
+[
+"polymorph|abstract|interface",
+"**Polymorphism** means different classes can answer the same method name in their own way. Be comfortable with the basic class below first."
+],
+[
+"encapsul|access|propert|private",
+"**Encapsulation** means protecting the data inside an object so it only changes in safe ways. It starts from the basic class below."
+],
+[
+"static",
+"A **static** member belongs to the class itself, not to one object, so all objects share it."
+],
+[
+"struct|record|enum",
+"This is a simple way to group data under one name. The class example shows the main idea."
+]
+]
+},
+{
+"re": "exception|error|debug|try|catch|throw|test|assert|log",
+"out": "Something went wrong",
+"code": {
+"python": "try:\n    n = int(\"abc\")\nexcept ValueError:\n    print(\"Something went wrong\")",
+"javascript": "try {\n  JSON.parse(\"abc\");\n} catch (e) {\n  console.log(\"Something went wrong\");\n}",
+"cpp": "try {\n    int n = stoi(\"abc\");\n    cout << n << endl;\n} catch (...) {\n    cout << \"Something went wrong\" << endl;\n}",
+"csharp": "try\n{\n    int n = int.Parse(\"abc\");\n    Console.WriteLine(n);\n}\ncatch (Exception)\n{\n    Console.WriteLine(\"Something went wrong\");\n}",
+"php": "try {\n    intdiv(1, 0);\n} catch (DivisionByZeroError $e) {\n    echo \"Something went wrong\" . PHP_EOL;\n}"
+},
+"what": "An **error** (or **exception**) happens when something goes wrong while the program runs, such as turning the text abc into a number. Normally the program stops. With **try and catch** you say: try this risky code, and if it fails, run this other code instead.",
+"why": "Real users type wrong things and files go missing. Handling errors keeps your program running and lets you show a friendly message.",
+"steps": [
+"The risky code goes inside the try block.",
+"If it works, the catch block is skipped.",
+"If it fails, the program jumps straight to the catch block (called except in Python).",
+"The program then carries on normally after the block."
+],
+"mistakes": [
+"Catching every error and printing nothing, which hides the real problem.",
+"Putting too much code in the try block, so you cannot tell which line failed."
+],
+"practice": [
+"Change abc to 123 and see that the catch block does not run.",
+"Print a different message in the catch block."
+],
+"focus": [
+[
+"debug",
+"**Debugging** means finding and fixing mistakes. Reading the error message and printing values are your two best tools. The example shows how an error is handled calmly."
+],
+[
+"test|assert",
+"**Testing** means checking that your code gives the answer you expect. Handling errors, shown below, helps tests report problems clearly."
+],
+[
+"log",
+"**Logging** means printing messages about what the program is doing so you can see where a problem happens."
+]
+]
+},
+{
+"re": "sort|search|binary|algorithm|big-o|bubble|merge|quick|order",
+"out": "2 4 9",
+"code": {
+"python": "nums = [9, 4, 2]\nnums.sort()\nprint(nums[0], nums[1], nums[2])",
+"javascript": "const nums = [9, 4, 2];\nnums.sort((a, b) => a - b);\nconsole.log(nums[0], nums[1], nums[2]);",
+"cpp": "!#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    int nums[3] = {9, 4, 2};\n    sort(nums, nums + 3);\n    cout << nums[0] << \" \" << nums[1] << \" \" << nums[2] << endl;\n    return 0;\n}",
+"csharp": "int[] nums = { 9, 4, 2 };\nArray.Sort(nums);\nConsole.WriteLine(nums[0] + \" \" + nums[1] + \" \" + nums[2]);",
+"php": "$nums = [9, 4, 2];\nsort($nums);\necho $nums[0] . \" \" . $nums[1] . \" \" . $nums[2] . PHP_EOL;"
+},
+"what": "**Sorting** puts items in order, like numbers from smallest to biggest. **Searching** means finding an item in a list. Every language has a **built-in** way to sort, and you can also write your own with loops.",
+"why": "Sorted data is easier to read and much faster to search. Apps sort scores, names and prices all the time.",
+"steps": [
+"We make a list of three numbers in the wrong order.",
+"We ask the language to sort the list.",
+"The list is now 2, 4, 9 (smallest first).",
+"We print the items one by one using their index."
+],
+"mistakes": [
+"Forgetting that sort changes the original list.",
+"In JavaScript, forgetting the compare function, so numbers are sorted like text (10 comes before 9)."
+],
+"practice": [
+"Add a fourth number and sort again.",
+"Find the biggest number without sorting, using a loop."
+],
+"focus": [
+[
+"binary",
+"**Binary search** finds an item in a **sorted** list by checking the middle and throwing away half each time. Learn sorting first, as shown below."
+],
+[
+"big-o",
+"**Big-O** describes how the work grows when the list gets bigger. Sorting a list is a good way to see it."
+],
+[
+"bubble|merge|quick",
+"This lesson is about one **method** of sorting. The built-in sort below gives the result you are aiming for."
+]
+]
+},
+{
+"re": "dictionar|map|hash|associative|key",
+"out": "20\n3",
+"code": {
+"python": "ages = {\"Ana\": 20, \"Ben\": 25}\nprint(ages[\"Ana\"])\nages[\"Cy\"] = 30\nprint(len(ages))",
+"javascript": "const ages = { Ana: 20, Ben: 25 };\nconsole.log(ages.Ana);\nages.Cy = 30;\nconsole.log(Object.keys(ages).length);",
+"cpp": "!#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\n\nint main() {\n    map<string, int> ages = {{\"Ana\", 20}, {\"Ben\", 25}};\n    cout << ages[\"Ana\"] << endl;\n    ages[\"Cy\"] = 30;\n    cout << ages.size() << endl;\n    return 0;\n}",
+"csharp": "var ages = new Dictionary<string, int> { { \"Ana\", 20 }, { \"Ben\", 25 } };\nConsole.WriteLine(ages[\"Ana\"]);\nages[\"Cy\"] = 30;\nConsole.WriteLine(ages.Count);",
+"php": "$ages = [\"Ana\" => 20, \"Ben\" => 25];\necho $ages[\"Ana\"] . PHP_EOL;\n$ages[\"Cy\"] = 30;\necho count($ages) . PHP_EOL;"
+},
+"what": "A **dictionary** (also called a **map** or **associative array**) stores **pairs**: a **key** and a **value**. The key is a label, like the name Ana, and the value is the data for it, like her age 20. You look up a value by its key.",
+"why": "When you need to find things by name instead of by position, dictionaries are quick and easy to read.",
+"steps": [
+"We create the dictionary with two pairs.",
+"We look up Ana by her key and print 20.",
+"We add a new pair for Cy.",
+"We print how many pairs there are now: 3."
+],
+"mistakes": [
+"Looking up a key that does not exist, which causes an error.",
+"Mixing up capital letters, because Ana and ana are different keys."
+],
+"practice": [
+"Add another person and print the size.",
+"Change Ana's age to 21 and print it."
+],
+"focus": [
+[
+"hash",
+"A **hash table** is how a dictionary works inside. It turns the key into a number so the value can be found very fast."
+]
+]
+},
+{
+"re": "function|method|parameter|argument|return|lambda|closure|callback|scope|higher|default|overview",
+"out": "7\n12",
+"code": {
+"python": "def add(a, b):\n    return a + b\n\nprint(add(3, 4))\nprint(add(5, 7))",
+"javascript": "function add(a, b) {\n  return a + b;\n}\nconsole.log(add(3, 4));\nconsole.log(add(5, 7));",
+"cpp": "!#include <iostream>\nusing namespace std;\n\nint add(int a, int b) {\n    return a + b;\n}\n\nint main() {\n    cout << add(3, 4) << endl;\n    cout << add(5, 7) << endl;\n    return 0;\n}",
+"csharp": "int Add(int a, int b)\n{\n    return a + b;\n}\n\nConsole.WriteLine(Add(3, 4));\nConsole.WriteLine(Add(5, 7));",
+"php": "function add($a, $b) {\n    return $a + $b;\n}\necho add(3, 4) . PHP_EOL;\necho add(5, 7) . PHP_EOL;"
+},
+"what": "A **function** is a named group of steps you can use again and again. It can take **inputs** called **parameters**, do some work, and **return** an answer. You define it once and then **call** it whenever you need it.",
+"why": "Functions stop you from copying the same code many times. They make programs shorter and easier to fix.",
+"steps": [
+"We define a function called add with two parameters, a and b.",
+"Inside, return sends back the sum.",
+"We call add(3, 4). The values 3 and 4 are the **arguments**.",
+"The answer 7 comes back and is printed. The second call prints 12."
+],
+"mistakes": [
+"Defining the function but never calling it.",
+"Forgetting return, so no answer comes back.",
+"Passing the arguments in the wrong order."
+],
+"practice": [
+"Write multiply that returns a times b.",
+"Write a function that takes a name and prints Hello and the name."
+],
+"focus": [
+[
+"default",
+"A **default parameter** has a value ready to use when the caller does not give one."
+],
+[
+"lambda|closure|callback|higher",
+"This idea builds on basic functions: a function can be stored in a variable and handed to other functions. Master the basic function below first."
+],
+[
+"scope",
+"**Scope** is where a variable can be used. A variable made inside a function only exists inside it."
+],
+[
+"return",
+"**return** sends an answer back to the caller. Without it the function gives back nothing useful."
+],
+[
+"parameter|argument",
+"**Parameters** are the names in the function definition. **Arguments** are the real values you pass when you call it."
+]
+]
+},
+{
+"re": "array|list|vector|collection|sequence|stack|queue|set|tuple|index|length",
+"out": "4\n3\n15",
+"code": {
+"python": "nums = [4, 9, 2]\nprint(nums[0])\nprint(len(nums))\ntotal = 0\nfor n in nums:\n    total += n\nprint(total)",
+"javascript": "const nums = [4, 9, 2];\nconsole.log(nums[0]);\nconsole.log(nums.length);\nlet total = 0;\nfor (const n of nums) {\n  total += n;\n}\nconsole.log(total);",
+"cpp": "vector<int> nums = {4, 9, 2};\ncout << nums[0] << endl;\ncout << nums.size() << endl;\nint total = 0;\nfor (int n : nums) {\n    total += n;\n}\ncout << total << endl;",
+"csharp": "var nums = new List<int> { 4, 9, 2 };\nConsole.WriteLine(nums[0]);\nConsole.WriteLine(nums.Count);\nint total = 0;\nforeach (int n in nums)\n{\n    total += n;\n}\nConsole.WriteLine(total);",
+"php": "$nums = [4, 9, 2];\necho $nums[0] . PHP_EOL;\necho count($nums) . PHP_EOL;\n$total = 0;\nforeach ($nums as $n) {\n    $total += $n;\n}\necho $total . PHP_EOL;"
+},
+"what": "An **array** (or **list**) keeps many values under one name, in order. Each value has a position number called an **index**, and counting starts at **0**. The first item is index 0 and the last item is the length minus 1.",
+"why": "Instead of ten separate variables for ten scores, you keep them in one list and use a loop to work with all of them.",
+"steps": [
+"We make a list with three numbers.",
+"The item at index 0 is the first one, 4.",
+"The length tells us there are 3 items.",
+"A loop visits each item and adds it to a total, so the total is 15."
+],
+"mistakes": [
+"Starting to count at 1 instead of 0.",
+"Reading an index that does not exist, like index 3 in a list of 3 items."
+],
+"practice": [
+"Add a fourth number and see the new total.",
+"Find the biggest number using a loop."
+],
+"focus": [
+[
+"stack",
+"A **stack** is a list where you add and remove only at the **end**, like a pile of plates (last in, first out). A normal list is where you start."
+],
+[
+"queue",
+"A **queue** is a list where items leave from the **front**, like people waiting in line (first in, first out). A normal list is where you start."
+],
+[
+"set",
+"A **set** is a collection with **no duplicates**. It starts from the same idea as a list."
+],
+[
+"tuple",
+"A **tuple** is a list whose items **cannot be changed** after it is made."
+]
+]
+},
+{
+"re": "loop|while|for |iterat|repeat|break|continue|counter|accumulat",
+"out": "Round 1\nRound 2\nRound 3",
+"code": {
+"python": "for i in range(1, 4):\n    print(\"Round\", i)",
+"javascript": "for (let i = 1; i <= 3; i++) {\n  console.log(\"Round \" + i);\n}",
+"cpp": "for (int i = 1; i <= 3; i++) {\n    cout << \"Round \" << i << endl;\n}",
+"csharp": "for (int i = 1; i <= 3; i++)\n{\n    Console.WriteLine(\"Round \" + i);\n}",
+"php": "for ($i = 1; $i <= 3; $i++) {\n    echo \"Round \" . $i . PHP_EOL;\n}"
+},
+"what": "A **loop** repeats code. A **for loop** is used when you know how many times to repeat. A **while loop** keeps going as long as its **condition** is true. Each run of the code is called one **iteration**.",
+"why": "Computers are great at repeating. A loop lets you print 100 lines or add 1000 numbers with just a few lines.",
+"steps": [
+"The loop starts with the counter i at 1.",
+"Before each round it checks the condition i <= 3.",
+"If true, it runs the code inside and prints the round number.",
+"Then i goes up by 1 and the check happens again. When i becomes 4 the loop stops."
+],
+"mistakes": [
+"A condition that never becomes false, which makes an infinite loop.",
+"Being off by one: using < when you needed <=, or the other way around."
+],
+"practice": [
+"Make it count to 5.",
+"Add up the numbers 1 to 10 in a variable called total."
+],
+"focus": [
+[
+"while",
+"A **while** loop checks the condition **before** every round, so it may run zero times."
+],
+[
+"do",
+"A **do while** loop runs the code **first** and checks after, so it always runs at least once."
+],
+[
+"break|continue",
+"**break** stops the loop immediately. **continue** skips the rest of this round and moves to the next one."
+],
+[
+"nested",
+"A **nested loop** is a loop inside another loop. The inner loop finishes fully for every round of the outer loop."
+]
+]
+},
+{
+"re": "\\bif\\b|else|switch|condition|ternary|compar|logic|boolean|decision|nested",
+"out": "B",
+"code": {
+"python": "score = 75\nif score >= 90:\n    print(\"A\")\nelif score >= 70:\n    print(\"B\")\nelse:\n    print(\"C\")",
+"javascript": "const score = 75;\nif (score >= 90) {\n  console.log(\"A\");\n} else if (score >= 70) {\n  console.log(\"B\");\n} else {\n  console.log(\"C\");\n}",
+"cpp": "int score = 75;\nif (score >= 90) {\n    cout << \"A\" << endl;\n} else if (score >= 70) {\n    cout << \"B\" << endl;\n} else {\n    cout << \"C\" << endl;\n}",
+"csharp": "int score = 75;\nif (score >= 90)\n{\n    Console.WriteLine(\"A\");\n}\nelse if (score >= 70)\n{\n    Console.WriteLine(\"B\");\n}\nelse\n{\n    Console.WriteLine(\"C\");\n}",
+"php": "$score = 75;\nif ($score >= 90) {\n    echo \"A\" . PHP_EOL;\n} elseif ($score >= 70) {\n    echo \"B\" . PHP_EOL;\n} else {\n    echo \"C\" . PHP_EOL;\n}"
+},
+"what": "A **condition** is a question the computer answers with **true** or **false**, like score >= 70. An **if** statement runs its code only when the condition is true. Add **else if** for more questions and **else** for everything left over. The computer checks from top to bottom and stops at the first true one.",
+"why": "Programs must make decisions: show a grade, check a password, decide if someone is an adult.",
+"steps": [
+"We store the score 75.",
+"The first check (score >= 90) is false, so it is skipped.",
+"The second check (score >= 70) is true, so it prints B.",
+"The else part is skipped because an earlier check already matched."
+],
+"mistakes": [
+"Using one = (store) when you meant == (compare).",
+"Putting the checks in the wrong order, so a high score matches a lower grade first."
+],
+"practice": [
+"Change the score to 95, then to 50.",
+"Add a check for 80 that prints a different letter."
+],
+"focus": [
+[
+"switch",
+"A **switch** is a neat way to choose between many exact values. It does the same job as a long if / else if chain. Start with the if idea below."
+],
+[
+"ternary",
+"The **ternary operator** is a short one-line if. Understand the normal if first."
+],
+[
+"compar|logic|boolean",
+"Comparisons give **true or false**, and **and / or / not** join them. The example uses a condition you can change."
+],
+[
+"nested",
+"**Nested** means an if inside another if. The inside check only happens when the outside one is true."
+]
+]
+},
+{
+"re": "string|text|substring|character|format|regular|regex|split|replace",
+"out": "5\nh\nhello world",
+"code": {
+"python": "s = \"hello\"\nprint(len(s))\nprint(s[0])\nprint(s + \" world\")",
+"javascript": "const s = \"hello\";\nconsole.log(s.length);\nconsole.log(s[0]);\nconsole.log(s + \" world\");",
+"cpp": "string s = \"hello\";\ncout << s.length() << endl;\ncout << s[0] << endl;\ncout << s + \" world\" << endl;",
+"csharp": "string s = \"hello\";\nConsole.WriteLine(s.Length);\nConsole.WriteLine(s[0]);\nConsole.WriteLine(s + \" world\");",
+"php": "$s = \"hello\";\necho strlen($s) . PHP_EOL;\necho $s[0] . PHP_EOL;\necho $s . \" world\" . PHP_EOL;"
+},
+"what": "A **string** is text, such as hello. It has a **length** (how many characters) and each **character** has an **index** starting at 0. Joining two strings together is called **concatenation**.",
+"why": "Almost every program works with text: names, messages, passwords and web pages.",
+"steps": [
+"We store the text hello.",
+"Its length is 5.",
+"The first character (index 0) is h.",
+"We join hello and the text world together."
+],
+"mistakes": [
+"Forgetting the quotes around text.",
+"Adding a number to text without converting it first."
+],
+"practice": [
+"Change the word to your name and check the length.",
+"Print the last character."
+],
+"focus": [
+[
+"substring",
+"A **substring** is a piece of a string, taken by start position and length."
+],
+[
+"format",
+"**Formatting** means building a nice message by putting values into text."
+],
+[
+"regular|regex",
+"**Regular expressions** are patterns for finding text. First be comfortable with plain strings."
+],
+[
+"split|replace",
+"Splitting and replacing work on strings, so first get comfortable with the basics below."
+]
+]
+},
+{
+"re": "operator|math|arithmetic|calculat|precedence|increment|assignment|random|number",
+"out": "10\n4\n21\n1",
+"code": {
+"python": "a = 7\nb = 3\nprint(a + b)\nprint(a - b)\nprint(a * b)\nprint(a % b)",
+"javascript": "const a = 7;\nconst b = 3;\nconsole.log(a + b);\nconsole.log(a - b);\nconsole.log(a * b);\nconsole.log(a % b);",
+"cpp": "int a = 7;\nint b = 3;\ncout << a + b << endl;\ncout << a - b << endl;\ncout << a * b << endl;\ncout << a % b << endl;",
+"csharp": "int a = 7;\nint b = 3;\nConsole.WriteLine(a + b);\nConsole.WriteLine(a - b);\nConsole.WriteLine(a * b);\nConsole.WriteLine(a % b);",
+"php": "$a = 7;\n$b = 3;\necho ($a + $b) . PHP_EOL;\necho ($a - $b) . PHP_EOL;\necho ($a * $b) . PHP_EOL;\necho ($a % $b) . PHP_EOL;"
+},
+"what": "**Operators** are symbols that work on values. The math operators are + (add), - (subtract), * (multiply), / (divide) and % (the **remainder** after dividing). Multiplication and division happen **before** addition and subtraction, and **brackets** change the order.",
+"why": "Totals, averages, discounts and scores are part of nearly every program.",
+"steps": [
+"We store 7 in a and 3 in b.",
+"a + b is 10.",
+"a - b is 4 and a * b is 21.",
+"a % b is the remainder of 7 divided by 3, which is 1."
+],
+"mistakes": [
+"Forgetting that whole-number division drops the decimals in some languages.",
+"Forgetting brackets, so the order of the math is not what you wanted."
+],
+"practice": [
+"Change a and b to 20 and 6.",
+"Check if a number is even using % 2."
+],
+"focus": [
+[
+"random",
+"**Random** numbers make games unpredictable. Each language has its own tool for them, and they work with the math operators shown below."
+],
+[
+"increment",
+"**++** adds 1 and **--** subtracts 1. They are shortcuts for the math below."
+],
+[
+"precedence",
+"**Precedence** is the order operators run in. Use brackets when you are not sure."
+]
+]
+},
+{
+"re": "variable|constant|naming|type|boolean|convert|comment|memory|pointer|reference|input|output|hello|syntax|basic",
+"out": "Ana 18",
+"code": {
+"python": "name = \"Ana\"\nage = 18\nprint(name, age)",
+"javascript": "const name = \"Ana\";\nlet age = 18;\nconsole.log(name, age);",
+"cpp": "string name = \"Ana\";\nint age = 18;\ncout << name << \" \" << age << endl;",
+"csharp": "string name = \"Ana\";\nint age = 18;\nConsole.WriteLine(name + \" \" + age);",
+"php": "$name = \"Ana\";\n$age = 18;\necho $name . \" \" . $age . PHP_EOL;"
+},
+"what": "A **variable** is a name that stores a **value** so you can use it later. Think of a labeled box. Each value has a **type**, such as a whole number, a decimal number, text or true/false. A **constant** is like a variable that must never change.",
+"why": "Variables let your program remember things such as names, scores and results.",
+"steps": [
+"We create a variable name that holds the text Ana.",
+"We create a variable age that holds the number 18.",
+"We print both, so the output is Ana 18."
+],
+"mistakes": [
+"Using a name before you create it.",
+"Misspelling the variable name or using the wrong capital letters."
+],
+"practice": [
+"Change the values to your own name and age.",
+"Add a variable called city and print all three."
+],
+"focus": [
+[
+"constant",
+"A **constant** holds a value that should never change, like a tax rate. Most languages have a special keyword for it."
+],
+[
+"type|convert",
+"A **type** tells what kind of value a variable holds. Conversion changes one type into another."
+],
+[
+"pointer|reference|memory",
+"This idea is about **how variables live in memory**. A variable is a named place in memory that holds a value."
+],
+[
+"comment",
+"A **comment** is a note for people that the computer ignores."
+],
+[
+"input|output",
+"**Input** is data going into the program and **output** is what it prints. The example shows output."
+],
+[
+"naming",
+"Choose clear names with letters, digits and underscores, and never start a name with a digit."
+]
+]
+}
+],
+"html": [
+[
+"link|image|path|favicon|audio|video|iframe|media|icon|open graph",
+"A **link** uses the **a** tag with an **href**. An **image** uses the **img** tag with a **src** and an **alt** text.",
+"<a href=\"https://example.com\">Visit the site</a>\n<img src=\"photo.jpg\" alt=\"A photo of my pet\" width=\"200\">"
+],
+[
+"list|table|nested|colspan|header|cell",
+"A **list** groups items and a **table** shows rows and columns. Use **ul** or **ol** with **li**, and **table** with **tr**, **th** and **td**.",
+"<ul>\n  <li>Apples</li>\n  <li>Bananas</li>\n</ul>\n<table border=\"1\">\n  <tr><th>Name</th><th>Score</th></tr>\n  <tr><td>Ana</td><td>90</td></tr>\n</table>"
+],
+[
+"form|input|label|button|checkbox|radio|select|textarea|validation|privacy",
+"A **form** collects information. Each **input** should have a **label**, and a **button** sends the form.",
+"<form>\n  <label>Name <input type=\"text\" name=\"name\"></label>\n  <label><input type=\"checkbox\"> I agree</label>\n  <button>Send</button>\n</form>"
+],
+[
+"semantic|nav|main|section|footer|aria|accessib|alt text|seo|landmark|screen|keyboard|focus|contrast",
+"**Semantic** tags describe the meaning of each part of the page, which helps **screen readers** and search engines.",
+"<header><h1>My Site</h1></header>\n<nav><a href=\"#\">Home</a> <a href=\"#\">About</a></nav>\n<main><p>Welcome!</p></main>\n<footer>My footer</footer>"
+],
+[
+"flex|grid|responsive|media|viewport|unit|layout|container|sticky|clamp|position|display|box model",
+"**Flexbox** places items in a row or column. Use **display: flex** and **gap**. A **media query** changes the style on small screens.",
+"<style>\n  .row { display: flex; gap: 10px; }\n  .row div { background: teal; color: white; padding: 10px; }\n  @media (max-width: 500px) { .row { flex-direction: column; } }\n</style>\n<div class=\"row\"><div>One</div><div>Two</div><div>Three</div></div>"
+],
+[
+"color|font|border|margin|padding|width|css|selector|class|inline|style|animation|transition|transform|hover|shadow|gradient|variable|pseudo",
+"**CSS** changes how things look. A **selector** picks the element and the **properties** inside braces style it.",
+"<style>\n  h1 { color: teal; }\n  .box { border: 2px solid teal; padding: 10px; }\n  .box:hover { background: lightyellow; }\n</style>\n<h1>Styled title</h1>\n<div class=\"box\">Hover over me</div>"
+],
+[
+"heading|paragraph|text|bold|italic|break|comment|entit|title|meta|structure|what is|page|attribute|tag|element",
+"An HTML page is made of **tags**. **h1** is a heading, **p** is a paragraph, and **strong** and **em** make text bold or italic.",
+"<!DOCTYPE html>\n<html>\n<head><title>My page</title></head>\n<body>\n  <h1>Hello!</h1>\n  <p>This is <strong>bold</strong> and <em>italic</em>.</p>\n</body>\n</html>"
+]
+],
+"hello": {
+"python": "print(\"Hello, IT student!\")",
+"javascript": "console.log(\"Hello, IT student!\");",
+"cpp": "cout << \"Hello, IT student!\" << endl;",
+"csharp": "Console.WriteLine(\"Hello, IT student!\");",
+"php": "echo \"Hello, IT student!\" . PHP_EOL;"
+}
+}

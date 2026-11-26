@@ -1,0 +1,67 @@
+/* The main page (Logging/login.php): animated title, intro, falling letters and the log in pop-up */
+body.landing{overflow-x:hidden}
+#rain{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.28}
+html[data-theme=light] #rain{opacity:.22}
+body.landing header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+body.landing header{flex-wrap:nowrap;padding:.6rem 1.2rem}
+body.landing header nav{display:flex;align-items:center;gap:.4rem;margin-left:auto}
+body.landing header nav a{margin-left:.3rem}
+body.landing header nav a.btn{margin-left:.5rem;padding:.4rem 1rem;color:var(--onbtn);font-size:.95rem}
+.themebtn{display:inline-flex;align-items:center;justify-content:center;width:2.1rem;height:2.1rem;min-height:0;padding:0;font-size:1rem;line-height:1;background:transparent;color:var(--mute);border:1px solid var(--line);border-radius:8px}
+.themebtn:hover{color:var(--ink);border-color:var(--ac);filter:none}
+
+.hero{position:relative;z-index:2;max-width:880px;margin:0 auto;padding:1.3rem 1.2rem 2.4rem;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero::before{content:"";position:absolute;inset:0 0 8% 0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 60% 55% at 50% 38%,color-mix(in srgb,var(--bg) 92%,transparent),transparent 74%)}
+.eyebrow{margin:0 0 .6rem;font-weight:700;font-size:.85rem;letter-spacing:.35em;text-transform:uppercase;color:var(--mute);opacity:0;animation:up .8s ease .1s forwards}
+
+/* the title: every letter drops from the top (version 45: no glow, a calmer look) */
+.title{margin:0;display:flex;flex-direction:column;align-items:center;font:800 clamp(2.2rem,10.5vw,4.7rem)/1.06 var(--font);letter-spacing:.05em;text-transform:uppercase}
+.title .word{display:inline-flex}
+.title .ch{--c0:var(--ink);display:inline-block;color:var(--c0);opacity:0;transform:translateY(-130px) rotate(-14deg);animation:drop .95s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:calc(var(--i)*.075s)}
+.title .ai .ch{--c0:var(--ac)}
+@keyframes drop{0%{opacity:0;transform:translateY(-130px) rotate(-14deg)}55%{opacity:1;transform:translateY(10px) rotate(3deg)}78%{transform:translateY(-4px) rotate(-1deg)}100%{opacity:1;transform:none}}
+.line{width:min(300px,60%);height:3px;margin:.7rem 0 .8rem;border-radius:3px;background:var(--ac);transform:scaleX(0);animation:grow .9s ease 1.6s forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+
+.tag{margin:0;font-size:clamp(1.05rem,3.2vw,1.45rem);font-weight:700;letter-spacing:.04em;opacity:0;animation:up .8s ease 1.7s forwards}
+.typed{margin:.4rem 0 0;min-height:1.7em;font:700 clamp(1rem,3vw,1.25rem) Consolas,'Courier New',monospace;color:var(--ac);opacity:0;animation:up .8s ease 1.9s forwards}
+.typed i{display:inline-block;width:.55em;height:1.05em;margin-left:.1em;vertical-align:-.15em;background:var(--ac);animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.intro{max-width:680px;margin:1rem 0 0;font-size:1rem;line-height:1.7;opacity:0;animation:up .8s ease 2.1s forwards}
+.feats{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:1rem 0 0;padding:0;list-style:none;opacity:0;animation:up .8s ease 2.3s forwards}
+.feats li{padding:.28rem .8rem;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--panel) 80%,transparent);font-size:.9rem;font-weight:600;color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-top:1.2rem;opacity:0;animation:up .8s ease 2.5s forwards}
+.cta .btn{padding:.7rem 1.5rem;font-size:1.05rem}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+
+/* the pages for people who are not logged in (sign up, verify email, forgot password): the same falling letters behind the form */
+body.entry #rain{opacity:.4}
+html[data-theme=light] body.entry #rain{opacity:.28}
+body.entry header{z-index:30;background:color-mix(in srgb,var(--panel) 80%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+body.entry header nav{margin-left:auto;align-items:center}
+body.entry main{position:relative;z-index:2}
+body.entry main::before{content:"";position:absolute;inset:0 0 auto 0;height:330px;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 48% 62% at 50% 42%,color-mix(in srgb,var(--bg) 90%,transparent),transparent 76%)}
+
+/* the log in pop-up */
+.lmodal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(5,8,20,.62);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.lmodal.open{display:flex}
+.lbox{position:relative;width:100%;max-width:410px;max-height:calc(100vh - 2rem);overflow:auto;padding:1.4rem 1.5rem 1.3rem;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 26px 70px rgba(0,0,0,.55);animation:mpop .28s cubic-bezier(.2,1.2,.4,1)}
+@keyframes mpop{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:none}}
+.lbox h2{margin:.1rem 0 .4rem;font-size:1.35rem;text-align:center}
+.lbox .mlogo{display:block;width:54px;height:54px;margin:0 auto .2rem}
+.lbox form{margin:0}
+.lbox .err,.lbox .ok{margin:.4rem 0;text-align:center}
+.lbox .sub{margin:.2rem 0 0;text-align:center}
+.lbox .full{width:100%;margin-top:.4rem}
+.lclose{position:absolute;right:.7rem;top:.5rem;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--mute);font-size:1.5rem;line-height:1;text-decoration:none}
+.lclose:hover{color:var(--ink);background:color-mix(in srgb,var(--line) 60%,transparent)}
+.lbox .links{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:.9rem 0 0;font-size:.95rem}
+
+@media(max-width:560px){body.landing header nav a.nolink{display:none}body.landing header .brand{font-size:1.05rem}body.landing header .brand img{width:28px;height:28px}}
+@media(prefers-reduced-motion:reduce){
+.eyebrow,.tag,.typed,.intro,.feats,.cta{opacity:1;animation:none}
+.line{transform:none;animation:none}
+.title .ch{opacity:1;transform:none;animation:none}
+.typed i,.lbox{animation:none}
+}
